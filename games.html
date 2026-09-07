@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e16">
+<title>All Games — CanIPlay Game Compatibility Database</title>
+<meta name="description" content="Search games and check PC compatibility with your hardware.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CanIPlay">
+<meta property="og:title" content="All Games — CanIPlay Game Compatibility Database">
+<meta property="og:description" content="Search games and check PC compatibility with your hardware.">
+<meta property="og:url" content="https://t-bites.github.io/caniplay/games.html">
+<meta property="og:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Games — CanIPlay Game Compatibility Database">
+<meta name="twitter:description" content="Search games and check PC compatibility with your hardware.">
+<meta name="twitter:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<link rel="canonical" href="https://t-bites.github.io/caniplay/games.html">
+<link rel="stylesheet" href="assets/style.css?v=1788736048">
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html">🎮 CanIPlay</a>
+  <span class="nav-tabs">
+    <a href="index.html" class="tab active">Can I Play</a>
+    <a href="game-gear.html" class="tab">Game Gear</a>
+    <a href="top-games.html" class="tab">Top Games</a>
+    <a href="features.html" class="tab">Features</a>
+    <a href="game-news.html" class="tab">Game News</a>
+    <a href="game-sales.html" class="tab">Game Sales</a>
+  </span>
+</nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span class="crumb-sep">›</span> <span class="crumb-cur">All Games</span></nav>
+<header class="hero small">
+  <h1>All Games</h1>
+  <p id="game-total">Loading 254538+ games...</p>
+  <div class="search-box">
+    <div class="combo-wrap">
+      <input id="game-search" type="text" placeholder="Search 254,538 games (e.g. GTA, Elden Ring, Stardew)..." autocomplete="off">
+      <div class="combo-list" id="game-search-combo"></div>
+    </div>
+  </div>
+  <p id="result-count" class="result-count"></p>
+  <div class="filter-bar sticky" id="filter-bar">
+    <select id="f-year"><option value="">All Years</option></select>
+    <select id="f-genre"><option value="">All Genres</option></select>
+    <select id="f-sort"><option value="">Newest</option><option value="name">Name A-Z</option><option value="year">Year</option><option value="discount">Biggest Discount</option><option value="price">Lowest Price</option></select>
+    <label class="f-check"><input type="checkbox" id="f-free"> Free</label>
+    <label class="f-check"><input type="checkbox" id="f-sale"> On Sale</label>
+    <label class="f-price" title="Price range (USD)"><span>$</span><input type="number" id="f-pmin" min="0" max="200" step="1" placeholder="Min" inputmode="numeric"></label>
+    <label class="f-price" title="Price range (USD)"><span>–</span><input type="number" id="f-pmax" min="0" max="200" step="1" placeholder="Max" inputmode="numeric"></label>
+    <button id="f-clear" class="f-clear">✕ Clear</button>
+  </div>
+</header>
+<section class="games full">
+  <div class="game-list" id="game-list"><p class="loading">Loading game database...</p></div>
+  <button id="load-more" class="load-more" style="display:none">Load more</button>
+</section>
+<footer class="footer">
+  <p>CanIPlay — game compatibility checker. Hardware data: PassMark. Game data: Steam.</p>
+  <p><a href="index.html">Home</a> · <a href="deals.html">Deals &amp; Free Games</a></p>
+  <div class="footer-top"><h3>Top Games</h3><ul><li><a href="game/1741550.html">来自女巫森林的法师</a></li><li><a href="game/2494400.html">一克帝国迷你版</a></li><li><a href="game/cyberphobia-prologue.html">Cyberphobia: Prologue</a></li><li><a href="game/fox-shooter.html">Fox Shooter</a></li><li><a href="game/corporate-board.html">Corporate Board</a></li><li><a href="game/movavi-video-suite-2026.html">Movavi Video Suite 2026</a></li><li><a href="game/movavi-video-suite-2025-steam-edition.html">Movavi Video Suite 2025  Steam Edition</a></li><li><a href="game/appgamekit-studio.html">AppGameKit Studio</a></li><li><a href="game/waste-it.html">Waste It</a></li><li><a href="game/aerofly-rc-10-rc-flight-simulator.html">aerofly RC 10 - RC Flight Simulator</a></li></ul></div>
+</footer>
+<script src="assets/app.js?v=1788736048"></script>
+</body>
+</html>

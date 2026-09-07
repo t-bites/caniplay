@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Game not found · CanIPlay</title>
+<meta name="description" content="Page not found. Search 100,000+ games and check PC compatibility on CanIPlay.">
+<meta name="theme-color" content="#0a0e16">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CanIPlay">
+<meta property="og:title" content="404 — Game not found · CanIPlay">
+<meta property="og:description" content="Page not found. Search 100,000+ games and check PC compatibility on CanIPlay.">
+<meta property="og:url" content="https://t-bites.github.io/caniplay/404.html">
+<meta property="og:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="404 — Game not found · CanIPlay">
+<meta name="twitter:description" content="Page not found. Search 100,000+ games and check PC compatibility on CanIPlay.">
+<meta name="twitter:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<link rel="canonical" href="https://t-bites.github.io/caniplay/404.html">
+>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/caniplay/assets/style.css?v=404">
+<style>
+  /* 404 基线（找不到时的搜索兜底） */
+  .e404 { max-width: 1180px; margin: 0 auto; padding: 32px 20px 64px; }
+  .e404-search { text-align: center; padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+  .e404-code { font-size: clamp(56px, 14vw, 96px); font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg, var(--accent), #9b6bff); -webkit-background-clip: text;
+    background-clip: text; color: transparent; letter-spacing: 2px; }
+  .e404 h1 { font-size: 1.4rem; margin: 10px 0; }
+  .e404 p.desc { color: var(--muted); max-width: 480px; margin: 0 auto 20px; }
+  .e404-form { display: flex; gap: 8px; max-width: 480px; margin: 0 auto; }
+  .e404-form input { flex: 1; min-height: 46px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text); padding: 0 14px; font-size: .95rem; }
+  .e404-form input:focus { outline: none; border-color: var(--accent); }
+  .e404-form button { min-height: 46px; padding: 0 18px; border-radius: 10px; border: 0;
+    background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; }
+  .e404-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
+  .e404-links a { min-height: 40px; display: inline-flex; align-items: center; padding: 6px 14px;
+    border-radius: 20px; background: var(--card); border: 1px solid var(--border);
+    color: var(--text); font-size: .85rem; }
+  .e404-links a:hover { border-color: var(--accent); color: var(--accent); }
+  .dyn-note { font-size: .72rem; color: var(--muted); margin-top: 10px; }
+</style>
+</head>
+<body class="e404-body">
+<div class="e404" id="e404-root">
+  <div class="e404-search" id="e404-search">
+    <div class="e404-code">404</div>
+    <h1 id="e404-title">Game not found</h1>
+    <p class="desc" id="e404-desc">This page doesn't exist — the link may be outdated. Trying to load it dynamically...</p>
+    <form class="e404-form" action="/caniplay/games.html" method="get" role="search">
+      <input id="e404-q" type="search" name="q" placeholder="Search 100,000+ games..." autocomplete="off" aria-label="Search games">
+      <button type="submit">Search</button>
+    </form>
+    <div class="e404-links">
+      <a href="/caniplay/index.html">🏠 Home</a>
+      <a href="/caniplay/games.html">🎮 All Games</a>
+      <a href="/caniplay/top-games.html">🔥 Top Games</a>
+      <a href="/caniplay/hardware.html">💻 Hardware</a>
+    </div>
+  </div>
+  <div class="dyn-game" id="dyn-game" style="display:none"></div>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('e404-root');
+  var searchBox = document.getElementById('e404-search');
+  var dynBox = document.getElementById('dyn-game');
+  var m = (location.pathname.match(/\/([\w-]+)\.html$/) || [])[1];
+  if (!m) { return; }
+  var slug = decodeURIComponent(m).toLowerCase();
+  if (!slug || slug.length > 80) { return; }
+  var q = document.getElementById('e404-q');
+  if (q) q.value = slug.replace(/[-_]+/g, ' ');
+
+  var first = slug[0];
+  if (!/[a-z0-9]/.test(first)) first = '0';
+  var shardUrl = '/caniplay/assets/data/lt_' + first + '.json';
+  fetch(shardUrl, { cache: 'force-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (list) {
+      if (!list) throw new Error('no shard');
+      var g = null;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].u === slug) { g = list[i]; break; }
+      }
+      if (!g) throw new Error('not in shard');
+      render(g);
+    })
+    .catch(function () {
+      document.getElementById('e404-title').textContent = 'Game not found';
+      document.getElementById('e404-desc').textContent = "We couldn't find this game in our database. Try searching instead:";
+    });
+
+  function esc(v) { return String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function txt(a) { return (a || []).map(esc).join(', '); }
+  function fld(v) { return (v ? esc(v) : '—'); }
+  function osRow(o) { return o ? esc(o) : '—'; }
+
+  function render(g) {
+    document.title = g.n + ' — Can I play it on my PC? | CanIPlay';
+    document.querySelector('meta[name="description"]').setAttribute('content',
+      "Can your PC run " + g.n + "? Check minimum & recommended requirements and get upgrade suggestions.");
+    searchBox.style.display = 'none';
+    // 成功渲染后隐藏静态"Game not found"标题与说明，避免误导
+    var t404 = document.getElementById('e404-title');
+    var d404 = document.getElementById('e404-desc');
+    if (t404) t404.style.display = 'none';
+    if (d404) d404.style.display = 'none';
+    dynBox.style.display = 'block';
+
+    // 平台徽章
+    var platNames = { steam: 'Steam', epic: 'Epic Games', gog: 'GOG', playstation: 'PS', xbox: 'Xbox', switch: 'Switch', pc: 'PC' };
+    var badges = '';
+    (g.pts || []).forEach(function (p) {
+      badges += '<span class="platform-badge pb-' + esc(p) + '">' + esc(platNames[p] || p) + '</span>';
+    });
+    var sale = g.di > 0 ? '<span class="sale-badge">-' + g.di + '%</span>' : '';
+    var price = '';
+    if (g.f) price = '<span class="sale-badge">Free</span>';
+    else if (g.p > 0) {
+      var orig = g.di > 0 ? Math.round(g.p / (1 - g.di / 100)) : g.p;
+      price = '$' + (g.p / 100).toFixed(2) + (g.di > 0 ? ' <span class="sale-badge">-' + g.di + '%</span>' : '');
+    }
+    var company = (g.dv && g.dv.length) || (g.pu && g.pu.length)
+      ? '<p class="company">🏢 ' + txt(g.dv) + ' · ' + txt(g.pu) + '</p>' : '';
+    var franchise = g.fr ? '<p class="franchise">🔗 Series: ' + esc(g.fr) + '</p>' : '';
+    var metaDate = g.dt ? esc(g.dt) : '';
+
+    // 截图区
+    var media = '';
+    if (g.ss && g.ss.length) {
+      media = '<div class="media-section"><h3>📸 Screenshots</h3><div class="ss-grid">' +
+        g.ss.slice(0, 4).map(function (s) { return '<a class="ss-item" href="' + esc(s) + '" target="_blank" rel="noopener"><img src="' + esc(s) + '" loading="lazy" alt="' + esc(g.n) + ' screenshot"></a>'; }).join('') +
+        '</div></div>';
+    }
+    // DLC
+    var dlc = '';
+    if (g.dl && g.dl.length) {
+      dlc = '<div class="media-section dlc-section"><h3>🎁 DLC &amp; Add-ons</h3><div class="dlc-list">' +
+        g.dl.map(function (d) {
+          var pt = d.p === 0 ? '<span class="dlc-price free">Free</span>'
+            : (d.p > 0 && d.p <= 20000 ? '<span class="dlc-price">$' + (d.p / 100).toFixed(2) + '</span>' : '');
+          return '<a class="dlc-item" href="https://store.steampowered.com/app/' + esc(d.d) + '" target="_blank" rel="noopener">' +
+            '<span class="dlc-thumb-ph"></span><span class="dlc-name">' + esc(d.n) + '</span>' + pt + '</a>';
+        }).join('') + '</div></div>';
+    }
+    // 新闻
+    var news = '';
+    if ((g.nw || []).length) {
+      news = '<div class="media-section"><h3>📰 Latest News</h3><ul class="news-list">' +
+        g.nw.map(function (nw) { return '<li><a href="' + esc(nw.u) + '" target="_blank" rel="noopener">' + esc(nw.t) + '</a> <span class="row-genres">' + esc(nw.d) + ' · ' + esc(nw.s) + '</span></li>'; }).join('') +
+        '</ul></div>';
+    }
+
+    var bgStyle = g.bg ? ' style="background-image:url(\'' + esc(g.bg).replace(/&amp;/g, '&') + '\')"' : '';
+    dynBox.innerHTML =
+      '<article class="game-page">' +
+      '  <div class="game-head game-head-bg"' + bgStyle + '>' +
+      '    <img src="' + esc(g.i) + '" alt="' + esc(g.n) + '" class="game-cover">' +
+      '    <div class="game-head-info">' +
+      '      <h1>' + esc(g.n) + ' ' + badges + ' ' + sale + '</h1>' +
+      '      <p class="genres">' + txt(g.ge) + '</p>' +
+      '      <p class="date">' + metaDate + (price ? ' · ' + price : '') + '</p>' +
+      '      ' + company + ' ' + franchise +
+      '    </div>' +
+      '  </div>' +
+      '  <div class="game-body">' +
+          '    <div class="game-main">' +
+          (g.h ? '' : '<p class="dyn-note">⚠️ 该游戏未在 Steam 页面公布详细硬件配置要求，下方配置栏显示为 「—」。</p>') +
+          '      <div class="specs">' +
+      '        <div class="spec-col"><h3>Minimum Requirements</h3><table>' +
+      '          <tr><td>OS</td><td>' + osRow(g.mo) + '</td></tr>' +
+      '          <tr><td>CPU</td><td>' + fld(g.mc) + '</td></tr>' +
+      '          <tr><td>GPU</td><td>' + fld(g.mg) + '</td></tr>' +
+      '          <tr><td>Memory</td><td>' + fld(g.mm) + '</td></tr>' +
+      '          <tr><td>Storage</td><td>' + fld(g.ms) + '</td></tr>' +
+      '        </table></div>' +
+      '        <div class="spec-col"><h3>Recommended Requirements</h3><table>' +
+      '          <tr><td>OS</td><td>' + osRow(g.ro) + '</td></tr>' +
+      '          <tr><td>CPU</td><td>' + fld(g.rc) + '</td></tr>' +
+      '          <tr><td>GPU</td><td>' + fld(g.rg) + '</td></tr>' +
+      '          <tr><td>Memory</td><td>' + fld(g.rm) + '</td></tr>' +
+      '          <tr><td>Storage</td><td>' + fld(g.rs) + '</td></tr>' +
+      '        </table></div>' +
+      '      </div>' +
+      '      ' + dlc + ' ' + media + ' ' + news +
+      '    </div>' +
+      '    <aside class="game-side">' +
+      '      <div class="check-panel"><h2>Check your hardware</h2>' +
+      '        <p class="dyn-note">轻量动态页未含硬件对比面板。查看硬件门槛与升级建议，请前往 <a href="' + esc('https://store.steampowered.com/app/' + g.a) + '" target="_blank" rel="noopener">Steam 商店</a> 核对。</p>' +
+      '      </div>' +
+      '    </aside>' +
+      '  </div>' +
+      '</article>' +
+      '<p class="dyn-note">Loading from CanIPlay long-tail database · 数据同步自 Steam 官方页面</p>';
+  }
+})();
+</script>
+</body>
+</html>
