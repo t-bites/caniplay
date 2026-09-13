@@ -61,6 +61,9 @@ a { color: var(--accent); text-decoration: none; }
   border-radius: 10px; font-size: .85rem; font-weight: 600; opacity: 0; pointer-events: none;
   transition: opacity .18s ease, transform .18s ease; z-index: 200; box-shadow: 0 4px 20px rgba(0,0,0,.5); }
 .share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.share-toast a.wl-toast-link { display: inline-block; margin-left: 6px; color: var(--accent); font-weight: 700;
+  text-decoration: underline; pointer-events: auto; white-space: nowrap; }
+.share-toast a.wl-toast-link:hover { filter: brightness(1.25); }
 
 /* QR 码分享弹层（Steam 式：手机扫码直达）2026-08-14 */
 .qr-pop { position: fixed; inset: 0; background: rgba(8, 12, 20, .66); display: flex; align-items: center;

@@ -1631,6 +1631,7 @@
             } catch (err) {}
             wlSave();
             paintWl();
+            wlToast(!was);
           });
           if (fWl) {
             fWl.addEventListener('change', () => {
@@ -2784,6 +2785,7 @@
       } else delete mo[appid];
       localStorage.setItem(key, JSON.stringify(mo));
     } catch (err) {}
+    wlToast(on2);
   });
   const place = () => {
     const row = head.querySelector('.share-row');
@@ -2792,6 +2794,25 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place);
   else place();
 })();
+
+/* #202 全站 wishlist ♥ 即时 toast 反馈（GG.deals 式）：当前点 ♥ 除心形变红外无可见反馈，
+   本助手给所有 wishlist 切换路径（games 列表 / deals / game-sales / 详情页 / 首页条 ✕）提供统一即时反馈。
+   收藏 → "Added to wishlist — View list →"（可点直达 wishlist 过滤页）；移除 → "Removed from wishlist"。 */
+function wlToast(on) {
+  let t = document.querySelector('.share-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'share-toast'; document.body.appendChild(t); }
+  t.classList.remove('show');
+  t.textContent = '';
+  if (on) {
+    const base = /\/game\//.test(location.pathname) ? '../' : '';   // 详情页在 game/ 子目录，链接需 ../ 前缀
+    t.innerHTML = 'Added to wishlist — <a class="wl-toast-link" href="' + base + 'games.html?wl=1">View list</a>';
+  } else {
+    t.textContent = 'Removed from wishlist';
+  }
+  t.classList.add('show');
+  clearTimeout(t._tm);
+  t._tm = setTimeout(() => t.classList.remove('show'), 2200);
+}
 
 /* #200 game-sales + #201 deals 促销/免费卡 wishlist ♥ 快捷收藏钮（GG.deals/Steam 式，承接 #199 新发现）
    .wcard[data-a] 生成器已内嵌 <button class="wl-btn">（game-sales 40+24 / deals 12+12 卡），
@@ -2833,6 +2854,7 @@
     btn.setAttribute('aria-pressed', !was);
     btn.title = was ? 'Add to wishlist' : 'Remove from wishlist';
     wlSave();
+    wlToast(!was);
   });
   window.addEventListener('storage', (e) => {
     if (e.key === 'caniplay_wl' || e.key === null) { wlSet = new Set(wlLoad()); paint(); }
@@ -3475,6 +3497,7 @@
     try { localStorage.setItem(wlKey, JSON.stringify(wlLoad().filter(v => v !== id).slice(0, 500))); } catch (err) {}
     try { const m = metaLoad(); delete m[id]; metaSave(m); } catch (err) {}
     try { window.dispatchEvent(new Event('caniplay:wlsync')); } catch (err) {}   // 顶栏角标 #69 计数
+    wlToast(false);
     build();
   });
   window.addEventListener('caniplay:wlsync', build);
