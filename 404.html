@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Game not found · CanIPlay</title>
+<meta name="description" content="Page not found. Search 100,000+ games and check PC compatibility on CanIPlay.">
+<meta name="theme-color" content="#0a0e16">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CanIPlay">
+<meta property="og:title" content="404 — Game not found · CanIPlay">
+<meta property="og:description" content="Page not found. Search 100,000+ games and check PC compatibility on CanIPlay.">
+<meta property="og:url" content="https://t-bites.github.io/caniplay/404.html">
+<meta property="og:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="404 — Game not found · CanIPlay">
+<meta name="twitter:description" content="Page not found. Search 100,000+ games and check PC compatibility on CanIPlay.">
+<meta name="twitter:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<link rel="canonical" href="https://t-bites.github.io/caniplay/404.html">
+>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/caniplay/assets/style.css?v=1790145900">
+<style>
+  /* 404 基线（找不到时的搜索兜底） */
+  .e404 { max-width: 1180px; margin: 0 auto; padding: 32px 20px 64px; }
+  .e404-search { text-align: center; padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+  .e404-code { font-size: clamp(56px, 14vw, 96px); font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg, var(--accent), #9b6bff); -webkit-background-clip: text;
+    background-clip: text; color: transparent; letter-spacing: 2px; }
+  .e404 h1 { font-size: 1.4rem; margin: 10px 0; }
+  .e404 p.desc { color: var(--muted); max-width: 480px; margin: 0 auto 20px; }
+  .e404-form { display: flex; gap: 8px; max-width: 480px; margin: 0 auto; }
+  .e404-form input { flex: 1; min-width: 0; min-height: 46px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text); padding: 0 14px; font-size: .95rem; }
+  .e404-form input:focus { outline: none; border-color: var(--accent); }
+  .e404-form button { min-height: 46px; padding: 0 18px; border-radius: 10px; border: 0;
+    background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; }
+  .e404-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
+  .e404-links a { min-height: 40px; display: inline-flex; align-items: center; padding: 6px 14px;
+    border-radius: 20px; background: var(--card); border: 1px solid var(--border);
+    color: var(--text); font-size: .85rem; }
+  .e404-links a:hover { border-color: var(--accent); color: var(--accent); }
+  /* #217 GG.deals 式：搜索无结果时「热门游戏兜底」——rankmap（top-games Live Players 同源）
+     前 12 名链接，点击直达 top-games 对应行（#214 深链 #rank-<appid>）；
+     #218 追加「See all Top Games →」收尾链接（SteamDB 榜单全集入口） */
+  .e404-pop { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); }
+  .e404-pop-h { font-size: .82rem; color: var(--muted); margin: 0 0 12px; font-weight: 600; letter-spacing: .02em; }
+  .e404-pop-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .e404-pop-link { min-height: 40px; display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px;
+    border-radius: 20px; background: var(--card); border: 1px solid var(--border);
+    color: var(--text); font-size: .85rem; text-decoration: none; }
+  .e404-pop-link:hover { border-color: var(--accent); }
+  .e404-pop-link:hover .e404-pop-n { color: var(--accent); }
+  .e404-pop-r { font-weight: 800; color: var(--accent); font-size: .78rem; }
+  .e404-pop-n { font-weight: 600; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .e404-pop-v { color: var(--muted); font-size: .74rem; white-space: nowrap; }
+  .e404-pop-v b { color: var(--accent); font-weight: 700; }
+  /* #218 收尾链接：榜单全集入口（SteamDB 式）——主色小字 + 右侧箭头，悬停 accent 加深 */
+  .e404-pop-more { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px;
+    min-height: 36px; padding: 4px 14px; border-radius: 18px;
+    color: var(--accent); font-size: .8rem; font-weight: 700; text-decoration: none;
+    border: 1px dashed var(--accent); opacity: .85; }
+  .e404-pop-more:hover { opacity: 1; background: rgba(74, 222, 128, .08); }
+  .e404-pop-more-cnt { color: var(--muted); font-weight: 600; font-size: .74rem; }
+  .e404-pop-more-cnt b { color: var(--accent); font-weight: 700; }
+  .dyn-note { font-size: .72rem; color: var(--muted); margin-top: 10px; }
+  /* #219 Steam 式：搜索框即时联想——复用 lt_<首字母> 分片（与 #217 动态渲染同源），
+     键入下拉最多 8 条，点击直达 game/<slug>.html（静态缺失时本页动态渲染兜底）
+     #222：href 改绝对路径 /caniplay/game/<slug>.html（GH Pages 404 在深路径返回本页，
+     相对 href 会叠成 /game/game/ 复合路径——实测线上真 bug，绝对路径任意深度解析正确）；
+     每行尾部加「点击复制链接」分享钮（承接 #218 候选），li 改 flex 行承载锚+复制钮 */
+  .e404-sug-wrap { position: relative; max-width: 480px; margin: 8px auto 0; text-align: left; }
+  .e404-sug { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border);
+    border-radius: 10px; background: var(--card); box-shadow: 0 10px 28px rgba(0,0,0,.4); overflow: hidden; }
+  .e404-sug li { display: flex; align-items: stretch; border-bottom: 1px solid var(--border); }
+  .e404-sug li:last-child { border-bottom: 0; }
+  .e404-sug a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 8px 6px 8px 14px; min-height: 44px;
+    text-decoration: none; color: var(--text); border: 0; }
+  .e404-sug a:hover, .e404-sug a.kbd-sel { background: rgba(74,222,128,.10); }
+  .e404-sug-copy { flex: 0 0 auto; width: 44px; min-height: 44px; border: 0; background: transparent;
+    color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: .72; }
+  .e404-sug-copy:hover { color: var(--accent); opacity: 1; }
+  .e404-sug-copy.copied { color: #4ade80; opacity: 1; }
+  .e404-sug-copy svg { width: 15px; height: 15px; }
+  /* #233 判定直达钮：⚡ 用已存 My PC（caniplay_hw，#26/#32 同源）合成 #45 深链参数直开判定——
+     「搜索联想 → 点 ⚡ → 详情页打开即自动判定同一配置」，链接亦可直接分享（复制钮同源） */
+  .e404-sug-check { flex: 0 0 auto; width: 44px; min-height: 44px; border: 0; background: transparent;
+    color: #4ade80; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: .85; }
+  .e404-sug-check:hover { color: var(--accent); opacity: 1; background: rgba(74,222,128,.08); }
+  .e404-sug-check svg { width: 16px; height: 16px; }
+  .e404-hw-tip { position: fixed; z-index: 120; background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 8px 10px; box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    display: none; flex-direction: column; gap: 4px; max-width: min(78vw, 320px);
+    font-size: .78rem; color: var(--text); pointer-events: none; }
+  .e404-hw-tip-lbl { font-size: .66rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: .05em; margin-bottom: 1px; }
+  .e404-hw-chip { display: flex; align-items: center; gap: 6px; max-width: 100%;
+    background: rgba(74,222,128,.10); border: 1px solid rgba(74,222,128,.28); color: #d1fae5;
+    border-radius: 999px; padding: 3px 9px; font-size: .76rem; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+  .e404-hw-chip b { color: #4ade80; font-weight: 700; flex-shrink: 0; }
+  .e404-hw-chip span { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .e404-hw-tip.show { display: flex; }
+  /* #237 ⚡ hover chips 可点击唤起「Edit My PC」内联编辑器（CYRI hover 卡式）——chips + ✏️ Edit 行
+     pointer-events:auto（tooltip 其余区域仍 none 防 hover 竞态），可点视觉 + 触控目标 */
+  .e404-hw-tip .e404-hw-chip { pointer-events: auto; cursor: pointer; transition: border-color .15s, background .15s; }
+  .e404-hw-tip .e404-hw-chip:hover { border-color: rgba(74,222,128,.55); background: rgba(74,222,128,.18); }
+  .e404-hw-tip .e404-hw-chip:focus-visible { outline: 2px solid rgba(74,222,128,.55); outline-offset: 2px; }
+  .e404-hw-edit { pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin-top: 4px; padding: 7px 12px; min-height: 32px; border: 1px solid rgba(74,222,128,.35);
+    border-radius: 999px; background: rgba(74,222,128,.08); color: #4ade80; font-size: .74rem; font-weight: 700;
+    cursor: pointer; transition: background .15s, border-color .15s; }
+  .e404-hw-edit:hover { background: rgba(74,222,128,.16); border-color: rgba(74,222,128,.6); }
+  .e404-hw-edit:focus-visible { outline: 2px solid rgba(74,222,128,.55); outline-offset: 2px; }
+  .e404-hw-edit svg { width: 13px; height: 13px; flex-shrink: 0; }
+  /* #237 编辑器：fixed 遮罩 + 居中卡（--card/--border 站点变量），.show 显隐；Esc/遮罩点击关闭 */
+  .e404-hw-editor { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center;
+    background: rgba(0,0,0,.55); padding: 16px; }
+  .e404-hw-editor.show { display: flex; }
+  .e404-hw-ecard { width: 100%; max-width: 360px; max-height: 88vh; overflow: auto; background: var(--card);
+    border: 1px solid var(--border); border-radius: 14px; padding: 18px; box-shadow: 0 24px 60px rgba(0,0,0,.55); }
+  .e404-hw-etitle { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .e404-hw-ecsub { font-size: .74rem; color: var(--muted); margin-bottom: 14px; }
+  .e404-hw-efield { margin-bottom: 12px; }
+  .e404-hw-efield label { display: block; font-size: .72rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: .04em; margin-bottom: 5px; font-weight: 700; }
+  .e404-hw-efield input, .e404-hw-efield select { width: 100%; min-height: 44px; padding: 9px 12px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 9px; color: var(--text); font-size: .88rem; }
+  .e404-hw-efield input:focus, .e404-hw-efield select:focus { outline: 2px solid rgba(74,222,128,.5); outline-offset: 1px; border-color: rgba(74,222,128,.5); }
+  .e404-hw-err { color: #f87171; font-size: .76rem; margin: 2px 0 10px; min-height: 16px; }
+  .e404-hw-eacts { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+  .e404-hw-btn { flex: 1; min-height: 40px; padding: 8px 12px; border-radius: 9px; font-size: .84rem; font-weight: 700;
+    cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text); }
+  .e404-hw-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .e404-hw-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .e404-hw-btn.save { background: rgba(74,222,128,.14); border-color: rgba(74,222,128,.4); color: #4ade80; }
+  .e404-hw-btn.save:hover { background: rgba(74,222,128,.22); border-color: rgba(74,222,128,.6); }
+  .e404-hw-btn.savejudge { background: #4ade80; border-color: #4ade80; color: #06281a; }
+  .e404-hw-btn.savejudge:hover { background: #5ff29a; border-color: #5ff29a; color: #06281a; }
+  /* #234 ⚡ hover 硬件预览：fixed 元素挂 body（.e404-sug overflow:hidden 会裁剪绝对定位子元素，
+     故不可放 li 内）——chip 纵向排列防窄屏横向溢出，长名 ellipsis */
+  /* #222 复制成功 toast（404 页无 app.js，自包含实现；复用站点视觉变量） */
+  .e404-toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
+    background: var(--card); border: 1px solid var(--border); color: var(--text);
+    padding: 9px 16px; border-radius: 999px; font-size: .82rem; z-index: 99;
+    opacity: 0; pointer-events: none; transition: opacity .18s ease; box-shadow: 0 6px 24px rgba(0,0,0,.38);
+    max-width: min(86vw, 420px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .e404-toast.show { opacity: 1; }
+  .e404-toast b { color: #4ade80; font-weight: 700; }
+  .e404-sug-thumb { width: 40px; height: 19px; object-fit: cover; border-radius: 3px;
+    flex-shrink: 0; background: var(--border); }
+  .e404-sug-n { font-size: .88rem; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .e404-sug-hl { color: #4ade80; font-weight: 700; }
+  .e404-sug-hot { color: #4ade80; font-size: .7rem; font-weight: 800; margin-left: 6px;
+    white-space: nowrap; flex-shrink: 0; letter-spacing: .01em; cursor: pointer;
+    border-radius: 4px; padding: 1px 2px; }
+  .e404-sug-hot:hover, .e404-sug-hot:focus-visible { color: #86efac; text-decoration: underline;
+    outline: 2px solid rgba(74,222,128,.55); outline-offset: 2px; }
+  .e404-sug-hot-v { font-weight: 700; }
+  .e404-sug-m { margin-left: auto; color: var(--muted); font-size: .73rem; white-space: nowrap; }
+  /* #225 联想无命中空态指引：不再静默收起，给「全库搜索」出口（Steam/Google 式空态） */
+  .e404-sug-empty { padding: 12px 14px; color: var(--muted); font-size: .83rem; line-height: 1.5; }
+  .e404-sug-empty strong { color: var(--text, #e5e7eb); font-weight: 700; }
+  .e404-sug-empty a, .e404-sug-empty .e404-sug-dym a { display: inline-block; padding: 7px 2px; color: #60a5fa; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .e404-sug-empty a:hover, .e404-sug-empty a:focus-visible { color: #86efac; text-decoration: underline; outline: 2px solid rgba(74,222,128,.55); outline-offset: 2px; }
+  .e404-sug-empty .e404-sug-dym { margin-top: 5px; font-size: .85rem; color: var(--text); display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .e404-sug-empty .e404-sug-dym a { color: #4f8cff; font-weight: 700; white-space: normal; word-break: break-word; }
+  .e404-sug-empty .e404-sug-dym a:hover { color: #86efac; }
+  .e404-sug-hint { display: inline-block; color: var(--muted); opacity: .65; font-size: .74rem; margin: 3px 0 0; }
+  /* #216 同源修复：窄屏下 input(min-width:auto) 撑破 form → 折行，消除 321px 横向溢出 */
+  @media (max-width: 400px) { .e404-form { flex-wrap: wrap; } .e404-form input { flex-basis: 100%; } }
+</style>
+</head>
+<body class="e404-body">
+<div class="e404" id="e404-root">
+  <div class="e404-search" id="e404-search">
+    <div class="e404-code">404</div>
+    <h1 id="e404-title">Game not found</h1>
+    <p class="desc" id="e404-desc">This page doesn't exist — the link may be outdated. Trying to load it dynamically...</p>
+    <form class="e404-form" action="/caniplay/games.html" method="get" role="search">
+      <input id="e404-q" type="search" name="q" placeholder="Search 100,000+ games..." autocomplete="off" aria-label="Search games">
+      <button type="submit">Search</button>
+    </form>
+    <div class="e404-links">
+      <a href="/caniplay/index.html">🏠 Home</a>
+      <a href="/caniplay/games.html">🎮 All Games</a>
+      <a href="/caniplay/top-games.html">🔥 Top Games</a>
+      <a href="/caniplay/hardware.html">💻 Hardware</a>
+    </div>
+  </div>
+  <div class="dyn-game" id="dyn-game" style="display:none"></div>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('e404-root');
+  var searchBox = document.getElementById('e404-search');
+  var dynBox = document.getElementById('dyn-game');
+  var m = (location.pathname.match(/\/([\w-]+)\.html$/) || [])[1];
+  if (!m) { return; }
+  var slug = decodeURIComponent(m).toLowerCase();
+  if (!slug || slug.length > 80) { return; }
+  var q = document.getElementById('e404-q');
+  if (q) q.value = slug.replace(/[-_]+/g, ' ');
+
+  var first = slug[0];
+  if (!/[a-z0-9]/.test(first)) first = '0';
+  var shardUrl = '/caniplay/assets/data/lt_' + first + '.json';
+  fetch(shardUrl, { cache: 'force-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (list) {
+      if (!list) throw new Error('no shard');
+      var g = null;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].u === slug) { g = list[i]; break; }
+      }
+      if (!g) throw new Error('not in shard');
+      render(g);
+    })
+    .catch(function () {
+      document.getElementById('e404-title').textContent = 'Game not found';
+      document.getElementById('e404-desc').textContent = "We couldn't find this game in our database. Try searching instead:";
+      popFallback(); // #217 无结果时给「热门游戏兜底」（GG.deals 式）
+    });
+
+  function esc(v) { return String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function txt(a) { return (a || []).map(esc).join(', '); }
+  function fld(v) { return (v ? esc(v) : '—'); }
+  function osRow(o) { return o ? esc(o) : '—'; }
+
+  function render(g) {
+    document.title = g.n + ' — Can I play it on my PC? | CanIPlay';
+    document.querySelector('meta[name="description"]').setAttribute('content',
+      "Can your PC run " + g.n + "? Check minimum & recommended requirements and get upgrade suggestions.");
+    searchBox.style.display = 'none';
+    // 成功渲染后隐藏静态"Game not found"标题与说明，避免误导
+    var t404 = document.getElementById('e404-title');
+    var d404 = document.getElementById('e404-desc');
+    if (t404) t404.style.display = 'none';
+    if (d404) d404.style.display = 'none';
+    dynBox.style.display = 'block';
+
+    // 平台徽章
+    var platNames = { steam: 'Steam', epic: 'Epic Games', gog: 'GOG', playstation: 'PS', xbox: 'Xbox', switch: 'Switch', pc: 'PC' };
+    var badges = '';
+    (g.pts || []).forEach(function (p) {
+      badges += '<span class="platform-badge pb-' + esc(p) + '">' + esc(platNames[p] || p) + '</span>';
+    });
+    var sale = g.di > 0 ? '<span class="sale-badge">-' + g.di + '%</span>' : '';
+    var price = '';
+    if (g.f) price = '<span class="sale-badge">Free</span>';
+    else if (g.p > 0) {
+      var orig = g.di > 0 ? Math.round(g.p / (1 - g.di / 100)) : g.p;
+      price = '$' + (g.p / 100).toFixed(2) + (g.di > 0 ? ' <span class="sale-badge">-' + g.di + '%</span>' : '');
+    }
+    var company = (g.dv && g.dv.length) || (g.pu && g.pu.length)
+      ? '<p class="company">🏢 ' + txt(g.dv) + ' · ' + txt(g.pu) + '</p>' : '';
+    var franchise = g.fr ? '<p class="franchise">🔗 Series: ' + esc(g.fr) + '</p>' : '';
+    var metaDate = g.dt ? esc(g.dt) : '';
+
+    // 截图区
+    var media = '';
+    if (g.ss && g.ss.length) {
+      media = '<div class="media-section"><h3>📸 Screenshots</h3><div class="ss-grid">' +
+        g.ss.slice(0, 4).map(function (s) { return '<a class="ss-item" href="' + esc(s) + '" target="_blank" rel="noopener"><img src="' + esc(s) + '" loading="lazy" alt="' + esc(g.n) + ' screenshot"></a>'; }).join('') +
+        '</div></div>';
+    }
+    // DLC
+    var dlc = '';
+    if (g.dl && g.dl.length) {
+      dlc = '<div class="media-section dlc-section"><h3>🎁 DLC &amp; Add-ons</h3><div class="dlc-list">' +
+        g.dl.map(function (d) {
+          var pt = d.p === 0 ? '<span class="dlc-price free">Free</span>'
+            : (d.p > 0 && d.p <= 20000 ? '<span class="dlc-price">$' + (d.p / 100).toFixed(2) + '</span>' : '');
+          return '<a class="dlc-item" href="https://store.steampowered.com/app/' + esc(d.d) + '" target="_blank" rel="noopener">' +
+            '<span class="dlc-thumb-ph"></span><span class="dlc-name">' + esc(d.n) + '</span>' + pt + '</a>';
+        }).join('') + '</div></div>';
+    }
+    // 新闻
+    var news = '';
+    if ((g.nw || []).length) {
+      news = '<div class="media-section"><h3>📰 Latest News</h3><ul class="news-list">' +
+        g.nw.map(function (nw) { return '<li><a href="' + esc(nw.u) + '" target="_blank" rel="noopener">' + esc(nw.t) + '</a> <span class="row-genres">' + esc(nw.d) + ' · ' + esc(nw.s) + '</span></li>'; }).join('') +
+        '</ul></div>';
+    }
+
+    var bgStyle = g.bg ? ' style="background-image:url(\'' + esc(g.bg).replace(/&amp;/g, '&') + '\')"' : '';
+    // #87 回源深链：动态详情页读回 caniplay_back（games 列表点卡时写入）→ 面包屑下渲染 "← Back to results"
+    // + 筛选摘要 chips（q 搜索词 · genre · N features · $min–$max · ♥ Wishlist，URL 参数实时解析）
+    var backChips = function (u) {
+      var out = [], sp;
+      // #89 可点击 chips：点 chip 直接进入该筛选维度结果（相对 ../games.html，静态+动态详情都在 game/ 深度）
+      var L = function (params) {
+        var qs = [];
+        for (var k in params) { var v = params[k]; if (v !== undefined && v !== null && String(v) !== '') qs.push(encodeURIComponent(k) + '=' + encodeURIComponent(v)); }
+        return '../games.html' + (qs.length ? '?' + qs.join('&') : '');
+      };
+      // #90 ✕ 移除该维度（GG.deals/Steam 标签去筛选式）：点 ✕ 回到 games.html 但仅去掉该维度（其余筛选保留）。
+      var rm = function (keys) {
+        var s2 = new URLSearchParams(u.indexOf('?') !== -1 ? u.slice(u.indexOf('?')) : '');
+        for (var z = 0; z < keys.length; z++) s2.delete(keys[z]);
+        var qs = [];
+        s2.forEach(function (v, k) { qs.push(encodeURIComponent(k) + '=' + encodeURIComponent(v)); });
+        return '../games.html' + (qs.length ? '?' + qs.join('&') : '');
+      };
+      var chip = function (cls, title, jump, label, rmv, rmtitle) {
+        return '<span class="br-chip-wrap"><a class="br-chip ' + cls + '" title="' + title + '" href="' + jump + '">' + label +
+          '</a><a class="br-chip-x" title="' + rmtitle + '" aria-label="' + rmtitle + '" href="' + rmv + '">✕</a></span>';
+      };
+      try {
+        sp = new URLSearchParams(u.indexOf('?') !== -1 ? u.slice(u.indexOf('?')) : '');
+        var _q = sp.get('q'), _g = sp.get('genre'), _f = sp.get('feat'), _w = sp.get('wl');
+        var _pmin = sp.get('pmin'), _pmax = sp.get('pmax');
+        if (_q) out.push(chip('br-q', 'Jump to search results', L({ q: _q }), '🔍 ' + esc(_q), rm(['q']), 'Remove search filter'));
+        if (_g) out.push(chip('br-g', 'Jump to genre', L({ genre: _g }), esc(_g), rm(['genre']), 'Remove genre filter'));
+        if (_f) { var _i = 0, _e = 0, _fc = _f.replace(/ /g, '+'); _f.split(/[+ ]/).forEach(function (s) { if (s.charAt(0) === '-') _e++; else if (s) _i++; });
+          if (_i || _e) {
+            var _ftxt = (_i ? _i + ' feature' + (_i > 1 ? 's' : '') : '') + (_i && _e ? ' · ' : '') + (_e ? '−' + _e + ' excl.' : '');
+            out.push(chip('br-f', 'Jump to feature-filtered results', L({ feat: _fc }), _ftxt, rm(['feat']), 'Remove feature filter'));
+          } }
+        if (_w === '1') out.push(chip('br-w', 'Jump to wishlist', L({ wl: '1' }), '♥ Wishlist', rm(['wl']), 'Remove wishlist filter'));
+        var _lo = parseFloat(_pmin), _hi = parseFloat(_pmax);
+        if (_pmin && _pmax && !isNaN(_lo) && !isNaN(_hi)) out.push(chip('br-p', 'Jump to price range', L({ pmin: _pmin, pmax: _pmax }), '$' + _lo + '–$' + _hi, rm(['pmin', 'pmax']), 'Remove price filter'));
+        else if (_pmin && !isNaN(_lo)) out.push(chip('br-p', 'Min price', L({ pmin: _pmin }), '≥$' + _lo, rm(['pmin', 'pmax']), 'Remove price filter'));
+        else if (_pmax && !isNaN(_hi)) out.push(chip('br-p', 'Max price', L({ pmax: _pmax }), '≤$' + _hi, rm(['pmin', 'pmax']), 'Remove price filter'));
+      } catch (err) {}
+      return out.join('');
+    };
+    // #191 来源足迹并入 .crumbs 全链（与 app.js window._brTrail 同逻辑内联：该页不加载 app.js）。读
+    // caniplay_back_trail（详情→详情逐跳追记的浏览路径）返回插进面包屑的 hop 链（内部 sep + 末尾 sep，
+    // 无包裹层），拼成 Home › All Games › A › B › 当前 全链面包屑；过滤等于当前页的 hop（self-loop 守卫）。
+    var _trailHtml = function (_ownF2) {
+      var _arr = [];
+      try { _arr = JSON.parse(sessionStorage.getItem('caniplay_back_trail') || '[]'); } catch (err) { _arr = []; }
+      if (!Array.isArray(_arr) || !_arr.length) return '';
+      var _hops = _arr.filter(function (h) {
+        return h && typeof h.u === 'string' && h.u.indexOf('game/') === 0 && h.u !== _ownF2;
+      });
+      if (!_hops.length) return '';
+      return _hops.map(function (h, i) {
+        var _nm = (h.n != null && h.n !== '') ? String(h.n) : 'previous game';
+        return '<a href="../' + esc(h.u) + '" title="Back to ' + esc(_nm) + '">' + esc(_nm) + '</a>' +
+          (i < _hops.length - 1 ? '<span class="crumb-sep">›</span>' : '');
+      }).join('') + '<span class="crumb-sep">›</span>';
+    };
+    var back = '';
+    try {
+      var _br = JSON.parse(sessionStorage.getItem('caniplay_back') || 'null');
+      if (_br && typeof _br.u === 'string') {
+              var _ownF = 'game/' + (location.pathname.split('/').pop() || ''); // #190 共用（self-loop 守卫）
+              var _u = _br.u, _label = null, _base = null, _chips = '', _trail = '';
+              if (_u.indexOf('games.html') === 0 && _u.indexOf('?') !== -1) {
+                _label = '← Back to results'; _base = 'games.html';
+                _chips = backChips(_u);
+              } else if (_u === 'top-games.html' || _u === 'game-sales.html') {
+                _label = (_u === 'top-games.html') ? '← Back to Top Games' : '← Back to Deals';
+                _base = _u;
+              } else if (_u.indexOf('game/') === 0) {
+                if (_ownF !== _u) {
+                  _label = '← Back to ' + (_br.n ? esc(String(_br.n)) : 'previous game');
+                  _base = _u;
+                }
+              }
+              if (_label) {
+                var _cc = (typeof _br.c === 'number' && _br.c > 0)
+                  ? ' (' + _br.c.toLocaleString() + (_base === 'games.html' ? ' game' + (_br.c === 1 ? '' : 's') : '') + ')'
+                  : '';
+                _trail = _trailHtml(_ownF); // #191 来源足迹并入 .crumbs 全链（hop 面包屑插进 All Games 与当前名之间）
+                back = '<div class="back-results"><a href="../' + esc(_base === 'games.html' ? _u : _base) + '" title="Back to ' + esc(_base.indexOf('game/') === 0 && _br.n ? _br.n : _u) + '">' + _label + _cc + '</a>' +
+                  (_chips ? '<span class="br-chips">' + _chips + '</span>' : '') + '</div>';
+              }
+            }
+    } catch (err) {}
+    dynBox.innerHTML =
+      '<article class="game-page">' +
+      '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span class="crumb-sep">›</span> <a href="../games.html">All Games</a> <span class="crumb-sep">›</span>' + _trail + '<span class="crumb-cur">' + esc(g.n) + '</span></nav>' +
+      '  ' + back +
+      '  <div class="game-head game-head-bg"' + bgStyle + '>' +
+      '    <img src="' + esc(g.i) + '" alt="' + esc(g.n) + '" class="game-cover">' +
+      '    <div class="game-head-info">' +
+      '      <h1>' + esc(g.n) + ' ' + badges + ' ' + sale + '</h1>' +
+      '      <p class="genres">' + txt(g.ge) + '</p>' +
+      '      <p class="date">' + metaDate + (price ? ' · ' + price : '') + '</p>' +
+      '      ' + company + ' ' + franchise +
+      '    </div>' +
+      '  </div>' +
+      '  <div class="game-body">' +
+          '    <div class="game-main">' +
+          (g.h ? '' : '<p class="dyn-note">⚠️ 该游戏未在 Steam 页面公布详细硬件配置要求，下方配置栏显示为 「—」。</p>') +
+          '      <div class="specs">' +
+      '        <div class="spec-col"><h3>Minimum Requirements</h3><table>' +
+      '          <tr><td>OS</td><td>' + osRow(g.mo) + '</td></tr>' +
+      '          <tr><td>CPU</td><td>' + fld(g.mc) + '</td></tr>' +
+      '          <tr><td>GPU</td><td>' + fld(g.mg) + '</td></tr>' +
+      '          <tr><td>Memory</td><td>' + fld(g.mm) + '</td></tr>' +
+      '          <tr><td>Storage</td><td>' + fld(g.ms) + '</td></tr>' +
+      '        </table></div>' +
+      '        <div class="spec-col"><h3>Recommended Requirements</h3><table>' +
+      '          <tr><td>OS</td><td>' + osRow(g.ro) + '</td></tr>' +
+      '          <tr><td>CPU</td><td>' + fld(g.rc) + '</td></tr>' +
+      '          <tr><td>GPU</td><td>' + fld(g.rg) + '</td></tr>' +
+      '          <tr><td>Memory</td><td>' + fld(g.rm) + '</td></tr>' +
+      '          <tr><td>Storage</td><td>' + fld(g.rs) + '</td></tr>' +
+      '        </table></div>' +
+      '      </div>' +
+      '      ' + dlc + ' ' + media + ' ' + news +
+      '    </div>' +
+      '    <aside class="game-side">' +
+      '      <div class="check-panel"><h2>Check your hardware</h2>' +
+      '        <p class="dyn-note">轻量动态页未含硬件对比面板。查看硬件门槛与升级建议，请前往 <a href="' + esc('https://store.steampowered.com/app/' + g.a) + '" target="_blank" rel="noopener">Steam 商店</a> 核对。</p>' +
+      '      </div>' +
+      '    </aside>' +
+      '  </div>' +
+      '</article>' +
+      '<p class="dyn-note">Loading from CanIPlay long-tail database · 数据同步自 Steam 官方页面</p>';
+  }
+
+  // #217 GG.deals 式兜底：slug 无结果（不在 lt_ 分片 / 分片缺失）时，拉 rankmap.json
+  // （top-games Live Players 同源，25 条真实当前在线数据）渲染「🔥 Popular right now」
+  // 前 12 名链接，点击经 #214 深链直达 top-games 对应行（#rank-<appid> 高亮滚动）；
+  // #218 网格后追加「See all Top Games →」收尾链接（SteamDB 榜单全集入口）；
+  // #223 该链接加「· <K> games ranked」计数副标（rankmap 有效总条数，与榜单全集一致，
+  //      数据全来自 rankmap 零编造）。
+  // rankmap 拉取失败/无有效条目 → 零渲染零报错（不编造数据）；成功渲染路径（dyn-game 可见）不触发。
+  function popFmt(v) {
+    v = Number(v);
+    if (!isFinite(v)) return '?';
+    return v >= 1e6 ? (v / 1e6).toFixed(2) + 'M' : v >= 1e3 ? Math.round(v / 1e3) + 'K' : String(Math.round(v));
+  }
+  function popFallback() {
+    if (document.getElementById('e404-pop')) return; // 幂等：已渲染不重复
+    fetch('/caniplay/assets/data/rankmap.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('no rankmap'); return r.json(); })
+      .then(function (rm) {
+        var keys = Object.keys(rm).sort(function (a, b) { return ((rm[a] && rm[a].r) || 999) - ((rm[b] && rm[b].r) || 999); }).slice(0, 12);
+        var links = [], i, it;
+        for (i = 0; i < keys.length; i++) {
+          it = rm[keys[i]];
+          if (!it || !it.n) continue;
+          links.push('<a class="e404-pop-link" href="/caniplay/top-games.html#rank-' + esc(keys[i]) + '" title="View ' + esc(it.n) + ' in live rankings — Worldwide #' + esc(it.r) + ' most played now, ' + esc(popFmt(it.v)) + ' online">' +
+            '<span class="e404-pop-r">#' + esc(it.r) + '</span>' +
+            '<span class="e404-pop-n">' + esc(it.n) + '</span>' +
+            '<span class="e404-pop-v">· <b>' + esc(popFmt(it.v)) + '</b> online</span></a>');
+        }
+        if (!links.length) return;
+        // #223 计数副标：rankmap 有效条目总数（与 top-games 榜单全集一致，零编造）
+        var cnt = 0, k2;
+        for (k2 in rm) { if (rm[k2] && rm[k2].n) cnt++; }
+        var cntBadge = cnt > 0 ? ' <span class="e404-pop-more-cnt">· <b>' + cnt + '</b> games ranked</span>' : '';
+        var box = document.createElement('div');
+        box.className = 'e404-pop';
+        box.id = 'e404-pop';
+        box.innerHTML = '<p class="e404-pop-h">🔥 Popular right now — jump to live rankings:</p><div class="e404-pop-grid">' + links.join('') + '</div><a class="e404-pop-more" href="/caniplay/top-games.html" title="View all ' + cnt + ' games in the live Top Games rankings">See all Top Games →' + cntBadge + '</a>';
+        var anchor = document.querySelector('.e404-links');
+        var host = (anchor && anchor.parentNode) ? anchor.parentNode : document.getElementById('e404-search');
+        host.appendChild(box);
+      })
+      .catch(function () { /* 静默：兜底本身失败不报错 */ });
+  }
+})();
+</script>
+<!-- #219 Steam 式搜索联想：键入即时下拉（复用 lt_<首字母> 分片），点击直达 game/<slug>.html。
+     键盘 ↑/↓ 导航 + Enter 选中（无选中则照常提交表单做全库搜索）；#221 热门榜（rankmap 同源）命中的
+     游戏置顶 + 名称后「#N now」实时角标（top-games Live Players 同源零伪造）。 -->
+<script>
+(function () {
+  var q = document.getElementById('e404-q');
+  if (!q || !q.form || q.form.getAttribute('data-sug')) return;
+  q.form.setAttribute('data-sug', '1');
+  var cache = {}, scache = {}, wrap = null, list = null, items = [], sel = -1;
+  var hotMap = null, hotLoading = false; // #221 rankmap 同源热门榜（top-games Live Players）
+
+  function esc(v) { return String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  function firstChar(s) { s = (s || '').trim(); if (!s) return null; var f = s.charAt(0).toLowerCase(); return /[a-z0-9]/.test(f) ? f : '0'; }
+  // #224 角标在线人数次级 K/M 口径（与 #217 兜底 .e404-pop-v 同族，本地 helper 因跨 IIFE 不共享）
+  function fmtHotV(v) {
+    v = Number(v);
+    if (!isFinite(v)) return '?';
+    return v >= 1e6 ? (v / 1e6).toFixed(2) + 'M' : v >= 1e3 ? Math.round(v / 1e3) + 'K' : String(Math.round(v));
+  }
+  // #226 判定深链参数转发：若本 404 页来自分享判定链接（?gpu=&cpu=&ram=，#45），
+  // 点击联想/复制时把硬件参数带上目标游戏详情页 → 静态详情页打开即自动判定同一配置
+  // （与 #45 深链同源零分裂）。仅转发 URL 中显式携带的 gpu/cpu/ram，无则不附加不打扰。
+  function checkQs() {
+    var q = location.search, out = [], p;
+    if (!q || q.indexOf('?') !== 0) return '';
+    var params = q.slice(1).split('&'), i, kv;
+    for (i = 0; i < params.length; i++) {
+      kv = params[i].split('=');
+      p = decodeURIComponent((kv[0] || '').replace(/\+/g, ' '));
+      if ((p === 'gpu' || p === 'cpu' || p === 'ram') && kv[1] !== undefined) {
+        out.push(p + '=' + kv[1]); // 保留原始编码，round-trip 零变异
+      }
+    }
+    return out.length ? '?' + out.join('&') : '';
+  }
+
+  // #233 判定直达：URL 显式携带的硬件参数（#45 分享链接=显式意图）优先，否则从
+  // localStorage caniplay_hw（#26/#32 对比弹层/详情页共享的 My PC）合成 gpu/cpu/ram——
+  // 与详情页 #45 解析同 key 同语义零分裂；仅 gpu/cpu 至少一项非空才产出
+  // （对齐 #45 `if (!hw.gpu && !hw.cpu) return` 守卫），ram 缺省 16（#45 同款回落）。
+  // 编码用 URLSearchParams 与详情页分享卡 #36 同款（空格 → +，round-trip 兼容）。
+  function savedHwQs() {
+    var hw = null;
+    try { hw = JSON.parse(localStorage.getItem('caniplay_hw') || 'null'); } catch (e) { hw = null; }
+    if (!hw || typeof hw !== 'object') return '';
+    var g = String(hw.gpu || '').trim(), c = String(hw.cpu || '').trim();
+    if (!g && !c) return '';
+    var qs = new URLSearchParams();
+    if (g) qs.set('gpu', g);
+    if (c) qs.set('cpu', c);
+    qs.set('ram', String(/^\d+$/.test(String(hw.ram)) ? hw.ram : 16));
+    return '?' + qs.toString();
+  }
+  // #237 用户从 ⚡ 预览编辑器显式编辑 My PC → 已存新值优先于 URL 参数（显式编辑=最新意图）；
+  // 未编辑过则维持 #233 语义：URL 显式参数（#45 分享链接）优先，回落已存 My PC。
+  var hwEdited = false;
+  function judgeQs() {
+    if (hwEdited) { var e = savedHwQs(); return e || checkQs(); }
+    return checkQs() || savedHwQs();
+  }
+  function refreshJudgeQS() { judgeQS = judgeQs(); }
+  var judgeQS = judgeQs(); // 页面生命周期内 location.search 与 localStorage 均不变，一次计算全页复用
+
+  // #234 ⚡ hover 硬件预览：从 judgeQS（URL 显式参数优先，回落已存 My PC）解析实际
+  // 用于判定的 gpu/cpu/ram 显示成 chips——与 ⚡ 点击所带参数同源零分裂，展示值==判定值。
+  // fixed 元素挂 body（.e404-sug overflow:hidden 会裁剪 li 内绝对定位子元素），
+  // pointer-events:none 不捕获 hover（悬停 tooltip 本身不触发 hide 竞态）。
+  function hwPreview() {
+    if (!judgeQS) return null;
+    var up = new URLSearchParams(judgeQS.slice(1));
+    var g = (up.get('gpu') || '').trim(), c = (up.get('cpu') || '').trim(),
+        r = (up.get('ram') || '').trim();
+    if (!g && !c && !r) return null;
+    return { gpu: g, cpu: c, ram: r };
+  }
+  var hwTipEl = null, hwTipSlug = '';
+  function ensureHwTip() {
+    if (hwTipEl) return hwTipEl;
+    hwTipEl = document.createElement('div');
+    hwTipEl.className = 'e404-hw-tip';
+    hwTipEl.setAttribute('role', 'tooltip');
+    document.body.appendChild(hwTipEl);
+    return hwTipEl;
+  }
+  function showHwTip(btn) {
+    var hw = hwPreview();
+    if (!hw) return;
+    hwTipSlug = btn.getAttribute('data-slug') || '';
+    var tip = ensureHwTip();
+    var chips = '<span class="e404-hw-tip-lbl">Judging with</span>';
+    if (hw.gpu) chips += '<span class="e404-hw-chip"><b>GPU</b><span>' + esc(hw.gpu) + '</span></span>';
+    if (hw.cpu) chips += '<span class="e404-hw-chip"><b>CPU</b><span>' + esc(hw.cpu) + '</span></span>';
+    if (hw.ram) {
+      var rv = hw.ram;
+      if (/^\d+$/.test(rv)) rv = rv + ' GB';
+      chips += '<span class="e404-hw-chip"><b>RAM</b><span>' + esc(rv) + '</span></span>';
+    }
+    tip.innerHTML = chips +
+      '<button type="button" class="e404-hw-edit" aria-label="Edit My PC hardware" title="Edit My PC hardware">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>' +
+      'Edit My PC</button>';
+    tip.classList.add('show');
+    // 定位：⚡ 钮上方居中，视口内 clamp；上方放不下（y<8）→ 移到下方
+    var r = btn.getBoundingClientRect();
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    var x = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), window.innerWidth - tw - 8);
+    var y = r.top - th - 8;
+    if (y < 8) y = r.bottom + 8;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+  function hideHwTip() {
+    if (hwTipEl) hwTipEl.classList.remove('show');
+  }
+
+  function loadShard(f, cb) {
+    if (cache[f]) { cb(cache[f]); return; }
+    fetch('/caniplay/assets/data/lt_' + f + '.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (arr) { cache[f] = arr; cb(arr); })
+      .catch(function () { cache[f] = []; cb([]); });
+  }
+  // #239 静态判定页联想分片（st_<letter>.json，gen_static_shards.py 由 pages.json+DB 生成）：
+  // lt_ 只含长尾（top 游戏被排除），404 联想因此永远搜不到 Cyberpunk 2077/ELDEN RING 等
+  // 热门大作——合并 st_（静态、前置）+ lt_（长尾、后置）为综合联想源；失败回落 lt_ 行为。
+  function loadStaticShard(f, cb) {
+    if (scache[f]) { cb(scache[f]); return; }
+    fetch('/caniplay/assets/data/st_' + f + '.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (arr) { scache[f] = arr; cb(arr); })
+      .catch(function () { scache[f] = []; cb([]); });
+  }
+  // #239 pages.json（#235 静态详情页 slug 清单，由实际 game/*.html 生成）门控 ⚡/Save&judge：
+  // 长尾游戏（无静态详情页）落动态渲染页无判定面板，⚡ 点了是死胡同——仅确为静态判定页的
+  // 游戏才显示 ⚡（shard d 标志不可靠 255,853/255,866 全 d=1）。清单 ~212KB 一次 fetch 内存
+  // 缓存（CDN force-cache）；加载失败保持 pagesSet=null → pagesHas 恒真回退旧行为不打扰。
+  var pagesSet = null;
+  function pagesHas(u) {
+    return !pagesSet || pagesSet.has(u);
+  }
+  function loadPages() {
+    fetch('/caniplay/assets/data/pages.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (arr) {
+        pagesSet = new Set(arr);
+        try { window.__E404_PAGES = true; window.__E404_N = pagesSet.size; } catch (e) {}
+        // 联想已开（搜索中/预填 slug 自动联想）→ 重渲染按清单移除长尾 ⚡（run 内建防陈旧响应守卫）
+        if (list && list.style.display !== 'none' && q.value && q.value.trim()) run(q.value.trim());
+      })
+      .catch(function () { try { window.__E404_PAGES = false; } catch (e) {} }); // 失败保持 null=旧行为
+  }
+  // ================= #244 My PC 编辑器 GPU/CPU 自动补全（CYRI 型号建议式） =================
+  // 懒加载精简 hw_suggest.json（gen_hw_suggest.py 由 data.json PassMark gpus/cpus 前 1000 款生成，
+  // ~50KB）→ 填 native <datalist>（零自定义下拉逻辑，浏览器原生过滤，移动端/键盘可达）。
+  // 首次打开编辑器才触发；失败/文件缺失静默零打扰（输入照常自由文本）。
+  var hwSugLoaded = false;
+  function loadHwSuggest() {
+    if (hwSugLoaded) return;
+    hwSugLoaded = true;
+    fetch('/caniplay/assets/data/hw_suggest.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (o) {
+        var gpuDl = document.getElementById('e404-hw-gpu-list');
+        var cpuDl = document.getElementById('e404-hw-cpu-list');
+        if (!gpuDl || !cpuDl) return;
+        var fill = function (names, dl) {
+          (names || []).forEach(function (nm) {
+            var op = document.createElement('option');
+            op.value = String(nm);
+            dl.appendChild(op);
+          });
+        };
+        fill(o.gpu, gpuDl);
+        fill(o.cpu, cpuDl);
+        try { window.__E404_HWSUG = gpuDl.options.length + cpuDl.options.length; } catch (e) {}
+      })
+      .catch(function () { try { window.__E404_HWSUG = 0; } catch (e) {} });
+  }
+  function ensureUI() {
+    if (wrap) return;
+    var form = q.form;
+    wrap = document.createElement('div');
+    wrap.className = 'e404-sug-wrap';
+    list = document.createElement('ul');
+    list.className = 'e404-sug';
+    list.setAttribute('role', 'listbox');
+    wrap.appendChild(list);
+    (form && form.parentNode ? form.parentNode : document.body).insertBefore(wrap, form ? form.nextSibling : null);
+    list.style.display = 'none';
+    // #222 委托绑定在创建后（IIFE 初始化时 list 尚为 null，直接绑会抛 TypeError 中止整段脚本）
+    list.addEventListener('click', function (ev) {
+      // #224 榜热角标点击 → 直达 top-games 对应行（#214 深链）；角标在 <a> 行内，
+      // 必须 preventDefault+stopPropagation 阻断行导航，防嵌套导航
+      var hot = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-hot') : null;
+      if (hot) {
+        var a = hot.getAttribute('data-a');
+        if (a) { ev.preventDefault(); ev.stopPropagation(); location.href = '/caniplay/top-games.html#rank-' + a; }
+        return;
+      }
+      // #233 判定直达钮：点击 → 带 judgeQS（URL 优先，回落已存 My PC）直开该游戏判定页
+      var chk = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-check') : null;
+      // #239 门控：清单已载入且目标无静态判定页 → 不导航（防御，渲染层已隐藏该 ⚡）
+      if (chk && pagesHas(chk.getAttribute('data-slug'))) {
+        ev.preventDefault(); ev.stopPropagation();
+        location.href = '/caniplay/game/' + chk.getAttribute('data-slug') + '.html' + judgeQS;
+        return;
+      }
+      var btn = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-copy') : null;
+      if (!btn) return;
+      ev.preventDefault(); ev.stopPropagation();
+      copyLink(btn);
+    });
+    // #224 键盘可达：角标 role=link tabindex=0，Enter/Space 直达榜单（委托到 list）
+    list.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Enter' && ev.key !== ' ') return;
+      var hot = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-hot') : null;
+      if (!hot) return;
+      var a = hot.getAttribute('data-a');
+      if (!a) return;
+      ev.preventDefault(); ev.stopPropagation();
+      location.href = '/caniplay/top-games.html#rank-' + a;
+    });
+    // mousedown preventDefault 防 input blur 提前收起联想（复制后可连续操作）
+    list.addEventListener('mousedown', function (ev) {
+      var t = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-copy, .e404-sug-check, .e404-sug-hot') : null;
+      if (t) ev.preventDefault();
+    });
+    // #234 ⚡ hover/focus 硬件预览：委托到 list（行重渲染后仍生效）。
+    // mouseover 显示、mouseout 隐藏（relatedTarget 仍在 ⚡ 内则不 hide）；
+    // focusin/focusout 键盘可达（Tab 到 ⚡ 钮即预览）。
+    list.addEventListener('mouseover', function (ev) {
+      var chk = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-check') : null;
+      if (chk) showHwTip(chk);
+    });
+    list.addEventListener('mouseout', function (ev) {
+      var to = ev.relatedTarget;
+      // #237 扩展到 tooltip：鼠标从 ⚡ 移到 chips/✏️ Edit（tooltip 挂 body 不在 list 内）不得隐藏
+      if (!to || !(to.closest && (to.closest('.e404-sug-check') || to.closest('.e404-hw-tip')))) hideHwTip();
+    });
+    list.addEventListener('focusin', function (ev) {
+      var chk = ev.target && ev.target.closest ? ev.target.closest('.e404-sug-check') : null;
+      if (chk) showHwTip(chk);
+    });
+    list.addEventListener('focusout', function (ev) {
+      var to = ev.relatedTarget;
+      if (!to || !(to.closest && (to.closest('.e404-sug-check') || to.closest('.e404-hw-tip')))) hideHwTip();
+    });
+  }
+  function renderSel() {
+    if (!list || !items.length) return;
+    var as = list.querySelectorAll('a');
+    for (var i = 0; i < as.length; i++) as[i].classList.toggle('kbd-sel', i === sel);
+  }
+  function hide() { if (list) list.style.display = 'none'; sel = -1; items = []; }
+  // Steam 式：把命中的查询词片段用 accent 加粗高亮（token 逐个顺序查找首个命中，未命中片段照常转义）
+  function hl(name, qRaw) {
+    var toks = (qRaw || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!toks.length) return esc(name);
+    var nlow = name.toLowerCase(), out = '', pos = 0, t;
+    for (var k = 0; k < toks.length; k++) {
+      t = toks[k];
+      var idx = nlow.indexOf(t, pos);
+      if (idx < 0) continue;
+      out += esc(name.slice(pos, idx));
+      out += '<b class="e404-sug-hl">' + esc(name.slice(idx, idx + t.length)) + '</b>';
+      pos = idx + t.length;
+    }
+    out += esc(name.slice(pos));
+    return out;
+  }
+  // #221 热门榜优先：rankmap（top-games Live Players 同源，与 #217 兜底同一数据）懒加载一次，
+  // 榜上游戏（appid 命中）在联想中置顶（按名次升序）+ 名称后补「#N now」实时角标；榜外保持分片原序。
+  function loadHot() {
+    if (hotMap || hotLoading) return;
+    hotLoading = true;
+    fetch('/caniplay/assets/data/rankmap.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (m) {
+        hotMap = {};
+        var keys = Object.keys(m || {});
+        for (var i = 0; i < keys.length; i++) {
+          var it = m[keys[i]];
+          if (it && it.r != null) hotMap[keys[i]] = it;
+        }
+        // 榜单就绪后若联想仍开着 → 用热门排序重排刷新（run 内陈旧守卫兜底）
+        if (list && list.style.display === 'block' && q.value && q.value.trim()) run(q.value);
+      })
+      .catch(function () { hotMap = {}; })
+      .then(function () { hotLoading = false; });
+  }
+  // #221 热门榜优先：全分片扫出「榜上命中」→ 按名次置顶（榜外保分片原序）→ 截 8 条。
+  // 分片非 appid 序，固定前 N 条扫描会漏掉深位热门，故全扫（分片 ≤16k，180ms 防抖下零感）。
+  function buildEntries(arr, s) {
+    var rx = new RegExp(escRe(s).replace(/\s+/g, '.*'), 'i');
+    var out = [], hot = [], i, n;
+    if (hotMap) {
+      for (i = 0; i < arr.length; i++) {
+        n = arr[i].n || '';
+        var hr = hotMap[arr[i].a];
+        if (hr && n && rx.test(n)) { arr[i]._hr = hr.r; arr[i]._hv = hr.v; arr[i]._hot = 1; hot.push(arr[i]); }
+      }
+      hot.sort(function (x, y) { return x._hr - y._hr; });
+      for (i = 0; i < hot.length && out.length < 8; i++) out.push(hot[i]);
+    }
+    for (i = 0; i < arr.length && out.length < 8; i++) {
+      if (arr[i]._hot) continue; // 已置顶的热门不重复
+      n = arr[i].n || '';
+      if (n && rx.test(n)) out.push(arr[i]);
+    }
+    return out;
+  }
+  function show(entries, qRaw) {
+    ensureUI();
+    items = entries;
+    if (!items.length) { hide(); return; }
+    var html = '';
+    for (var i = 0; i < items.length; i++) {
+      var e = items[i];
+      var thumb = e.i ? '<img class="e404-sug-thumb" loading="lazy" alt="" src="' + esc(e.i) + '">' : '<span class="e404-sug-thumb"></span>';
+      var m = ((e.ge && e.ge.length) ? esc(e.ge[0]) : '') + ((e.ge && e.ge.length && e.dt) ? ' · ' : '') + (e.dt ? esc(String(e.dt).split(',')[0]) : '');
+      html += '<li role="option">' +
+        '<a data-slug="' + esc(e.u) + '" href="/caniplay/game/' + esc(e.u) + '.html' + checkQs() + '" title="Open ' + esc(e.n) + '">' +
+        thumb + '<span class="e404-sug-n">' + hl(e.n, qRaw) + '</span>' +
+        (e._hr ? '<b class="e404-sug-hot" role="link" tabindex="0" data-a="' + esc(e.a) + '" title="Currently #' + e._hr + ' most played worldwide right now' + (e._hv != null ? ' — ' + (Math.round(Number(e._hv)) || 0) + ' online' : '') + '. View live ranking">#' + e._hr + ' now' + (e._hv != null ? ' · <span class="e404-sug-hot-v">' + fmtHotV(e._hv) + '</span> online' : '') + '</b>' : '') +
+        (m ? '<span class="e404-sug-m">' + m + '</span>' : '') + '</a>' +
+        (judgeQS && pagesHas(e.u) ? '<button type="button" class="e404-sug-check" data-slug="' + esc(e.u) + '" title="Check if my PC can run ' + esc(e.n) + '" aria-label="Check ' + esc(e.n) + ' with my PC">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.4 12.2l2.5 2.5 4.7-5"/></svg></button>' : '') +
+        '<button type="button" class="e404-sug-copy" data-slug="' + esc(e.u) + '" title="Copy link" aria-label="Copy link to ' + esc(e.n) + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>' +
+        '</li>';
+    }
+    list.innerHTML = html;
+    list.style.display = 'block';
+    sel = -1;
+    renderSel();
+  }
+  // #225 联想无命中空态指引：不静默隐藏，显示「No games match + 全库搜索出口」。
+  // data-slug 零联想项（role=option 不渲染）；link 指向 /caniplay/games.html?q=<编码>，
+  // 与 Enter 默认提交行为一致（items 空时 keydown 早退，Enter 走 form 全库搜索）。blur 130ms 照常收起。
+  // #228 「Did you mean」建议：无正则命中时对分片名称做 Levenshtein 近似（按词最小编辑距离），
+  // 距离 ≤ 阈值（1–2）的最近名称渲染成点击直达 game/<slug>.html 的建议链接（Steam/Google 式拼写纠正），
+  // 带 checkQs() 判定参数转发（#226 同源）；与查询等同（距离 0）的重复词不算建议（正则早已命中）。
+  function suggestOth(arr, s) {
+    var sl = s.toLowerCase(), best = null, bi, n, low, d, minD, ws, w, j, full;
+    for (bi = 0; bi < arr.length; bi++) {
+      n = arr[bi].n || '';
+      if (!n) continue;
+      low = n.toLowerCase();
+      if (low === sl) continue;
+      minD = 99;
+      // ① 全名整体比较（处理多词连写/顺序近似："eldn ring"→"elden ring"）
+      full = low.replace(/\s+/g, ' ').trim();
+      if (full && full !== sl) {
+        d = levDist(sl, full, 3);
+        if (d >= 1 && d < minD) minD = d;
+      }
+      // ② 逐词比较（处理单次拼错："cyberpuk"→"Cyberpunk Bar Sim" 的 cyberpunk）
+      if (minD > 1) {
+        ws = low.split(/[^a-z0-9]+/);
+        for (j = 0; j < ws.length; j++) {
+          w = ws[j];
+          if (!w) continue;
+          d = levDist(sl, w, 3);
+          if (d >= 1 && d < minD) minD = d;
+          if (minD === 1) break; // 已最优，无需继续
+        }
+      }
+      if (minD <= 2 && (!best || minD < best.d)) { best = { d: minD, n: n, u: arr[bi].u }; }
+    }
+    return best;
+  }
+  function showEmpty(s, arr) {
+    ensureUI();
+    items = [];
+    sel = -1;
+    var dym = '';
+    // #228 建议仅在 ≥3 字符查询时计算（1–2 字符的 dp 噪音大且易误指，Google 同款口径）
+    if (arr && arr.length && (s || '').trim().length >= 3) {
+      var sug = suggestOth(arr, s);
+      if (sug) {
+        // #241 判定深链补齐：建议链接升级 judgeQS（URL 参数优先，回落已存 My PC，#233 同源），
+        // 并加 ⚡ 判定直达钮——仅 judgeQS 非空且目标确为静态判定页（pages.json 门控，#235/#239 同口径）
+        // 才渲染；长尾建议（无静态判定面板）零 ⚡ 不造死胡同。至此「判定直达」全站统一：
+        // 404 联想行（#233）+ games 库 Did you mean Top-5（#235）+ 404 Did you mean（本轮）。
+        dym = '<div class="e404-sug-dym">Did you mean <a href="/caniplay/game/' + esc(sug.u) + '.html' + judgeQS +
+          '" title="Open ' + esc(sug.n) + '"><b>' + esc(sug.n) + '</b></a>?' +
+          (judgeQS && pagesHas(sug.u) ?
+            '<button type="button" class="e404-sug-check" data-slug="' + esc(sug.u) +
+            '" title="Check if my PC can run ' + esc(sug.n) + '" aria-label="Check ' + esc(sug.n) + ' with my PC">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.4 12.2l2.5 2.5 4.7-5"/></svg></button>' : '') +
+          '</div>';
+      }
+    }
+    list.innerHTML = '<li role="status" class="e404-sug-empty">No games match <strong>&ldquo;' + esc(s) +
+      '&rdquo;</strong> in the live database.<br><span class="e404-sug-hint">Check your spelling or try fewer keywords.</span> — <a href="/caniplay/games.html?q=' + encodeURIComponent(s) +
+      '">Search all games →</a>' + dym + '</li>';
+    list.style.display = 'block';
+  }
+  // 经典 DP Levenshtein（带 max 早退）：整行最小值 > max 即返回 max+1（后续行只增不减，正确剪枝）。
+  // |长度差| > max 直接剪（编辑距离 ≥ 长度差）；≤16k 分片按词计算零感。
+  function levDist(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    var m = a.length, n = b.length, prev = [], cur = [], i, j, c, rowMin;
+    for (j = 0; j <= n; j++) prev[j] = j;
+    for (i = 1; i <= m; i++) {
+      cur[0] = i;
+      rowMin = cur[0];
+      for (j = 1; j <= n; j++) {
+        c = a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1;
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + c);
+        if (cur[j] < rowMin) rowMin = cur[j];
+      }
+      if (rowMin > max) return max + 1;
+      prev = cur; cur = [];
+    }
+    return prev[n];
+  }
+  function run(s) {
+    s = (s || '').trim();
+    var f = firstChar(s);
+    if (!f) { hide(); return; }
+    var qv = s.toLowerCase();
+    // #239 双源合并：st_（静态判定页，前置=著名游戏优先）+ lt_（长尾，后置）
+    var stArr = null, ltArr = null, stDone = false, ltDone = false;
+    function both() {
+      if (!(stDone && ltDone)) return;
+      if (q.value != null && q.value.trim().toLowerCase() !== qv) return; // 防陈旧响应
+      var arr = (stArr || []).concat(ltArr || []);
+      if (!arr || !arr.length) { showEmpty(s, arr); return; }
+      var entries = buildEntries(arr, s);
+      if (!entries.length) { showEmpty(s, arr); return; } // #225 无命中空态指引（原静默隐藏）#228 带 Did you mean
+      show(entries, s);
+    }
+    loadStaticShard(f, function (a) { stDone = true; stArr = a || []; both(); });
+    loadShard(f, function (a) { ltDone = true; ltArr = a || []; both(); });
+  }
+  var t;
+  q.addEventListener('input', function () {
+    clearTimeout(t);
+    // #225 输入即清旧联想/空态（防 prefill 空态等陈旧渲染闪现，让新结果渲染前不残留旧空态链接）
+    if (list) list.style.display = 'none';
+    t = setTimeout(function () { run(q.value); }, 180);
+  });
+  q.addEventListener('focus', function () { if (q.value && q.value.trim()) run(q.value); });
+  q.addEventListener('blur', function (e) {
+    // #234 键盘可达保真：Tab 从输入框移到联想列表（⚡/复制钮/锚）时，焦点已入 list，
+    // 此时 blur 若立即 hide() 会把 list display:none → 聚焦钮失焦（focusout→tooltip 消失）。
+    // relatedTarget 为 list 内部 → 不收起（保持列表+焦点+tooltip 可见）；
+    // 否则（点到外部）130ms 后照常收起。
+    var rt = e && e.relatedTarget ? e.relatedTarget :
+             (document.activeElement && document.activeElement.closest &&
+              document.activeElement.closest('.e404-sug') ? document.activeElement : null);
+    if (rt && rt.closest && rt.closest('.e404-sug')) return;
+    setTimeout(hide, 130);
+  });
+  q.addEventListener('keydown', function (e) {
+    if (!list || list.style.display !== 'block' || !items.length) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); sel = (sel + 1) % items.length; renderSel(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); sel = sel < 0 ? items.length - 1 : (sel === 0 ? items.length - 1 : sel - 1); renderSel(); }
+    else if (e.key === 'Enter' && sel >= 0) {
+      e.preventDefault();
+      var a = list.querySelectorAll('a')[sel];
+      if (a) location.href = a.getAttribute('href');
+    }
+  });
+  // #222 复制链接用自包含 toast（404 页无 app.js）
+  var toastEl = null;
+  function toast(html) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'e404-toast';
+      document.body.appendChild(toastEl);
+    }
+    toastEl.innerHTML = html;
+    toastEl.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { toastEl.classList.remove('show'); }, 1700);
+  }
+  // #222 复制回退（无 Clipboard API 的 http 环境）：隐藏 textarea + execCommand
+  function legacyCopy(t) {
+    var ta = document.createElement('textarea');
+    ta.value = t; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  // #222 复制绝对 /caniplay/game/<slug>.html 链接（#226 判定参数转发；#233 升级为 judgeQS——
+  // URL 显式参数优先、回落已存 My PC 合成，#45 分享判定链接可复制直达）；data-slug 与锚同源零分裂
+  function copyLink(btn) {
+    var slug = btn.getAttribute('data-slug');
+    var url = location.origin + '/caniplay/game/' + slug + '.html' + judgeQS;
+    function done() {
+      btn.classList.add('copied');
+      setTimeout(function () { btn.classList.remove('copied'); }, 1300);
+      toast('Link copied: <b>' + esc(slug) + '</b>');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, function () { legacyCopy(url); done(); });
+    } else { legacyCopy(url); done(); }
+  }
+  // 页面预填（不存在游戏的 slug 已把 q 填成游戏名）→ 载入即联想
+  if (q.value && q.value.trim()) setTimeout(function () { run(q.value); }, 260);
+  loadHot(); // #221 预载 rankmap 热门榜（联想热门置顶 + #N now 角标数据源）
+  loadPages(); // #239 预载 pages.json 静态判定页清单（⚡/Save&judge 门控数据源）
+
+  // ================= #237 ⚡ hover chips 可点击「Edit My PC」内联编辑器（CYRI hover 卡式） =================
+  // hover ⚡ 预览将用于判定的硬件（#234）→ 点 chips 或 ✏️ Edit → 内联编辑已存 My PC →
+  // 保存写回 caniplay_hw（#26/#32 同 key 同格式 {gpu,cpu,ram}）→ judgeQS 重算为新值 →
+  // ⚡/复制立即用新硬件（hwEdited 使已存新值优先于 URL 参数，显式编辑=最新意图）。
+  var hwEdEl = null, hwEdGpu = null, hwEdCpu = null, hwEdRam = null, hwEdErr = null, hwEdSlug = '';
+  function ensureHwEditor() {
+    if (hwEdEl) return hwEdEl;
+    hwEdEl = document.createElement('div');
+    hwEdEl.className = 'e404-hw-editor';
+    hwEdEl.setAttribute('role', 'dialog');
+    hwEdEl.setAttribute('aria-modal', 'true');
+    hwEdEl.innerHTML =
+      '<div class="e404-hw-ecard">' +
+        '<div class="e404-hw-etitle">Edit My PC</div>' +
+        '<div class="e404-hw-ecsub">Used by ⚡ quick checks on this page — saved to this browser.</div>' +
+        '<div class="e404-hw-efield"><label for="e404-hw-gpu">GPU</label>' +
+          '<input id="e404-hw-gpu" type="text" autocomplete="off" list="e404-hw-gpu-list" placeholder="e.g. NVIDIA GeForce RTX 3060"></div>' +
+        '<datalist id="e404-hw-gpu-list"></datalist>' +
+        '<div class="e404-hw-efield"><label for="e404-hw-cpu">CPU</label>' +
+          '<input id="e404-hw-cpu" type="text" autocomplete="off" list="e404-hw-cpu-list" placeholder="e.g. Intel Core i5-12400F"></div>' +
+        '<datalist id="e404-hw-cpu-list"></datalist>' +
+        '<div class="e404-hw-efield"><label for="e404-hw-ram">RAM</label>' +
+          '<select id="e404-hw-ram"></select></div>' +
+        '<div class="e404-hw-err" role="alert"></div>' +
+        '<div class="e404-hw-eacts">' +
+          '<button type="button" class="e404-hw-btn cancel" data-act="cancel">Cancel</button>' +
+          '<button type="button" class="e404-hw-btn save" data-act="save">Save</button>' +
+          '<button type="button" class="e404-hw-btn savejudge" data-act="savejudge" title="Save and check this game with your PC">Save &amp; judge</button>' +
+        '</div>' +
+      '</div>';
+    var sel = hwEdEl.querySelector('#e404-hw-ram');
+    [4, 8, 16, 32, 64].forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = String(v); o.textContent = v + ' GB';
+      sel.appendChild(o);
+    });
+    hwEdGpu = hwEdEl.querySelector('#e404-hw-gpu');
+    hwEdCpu = hwEdEl.querySelector('#e404-hw-cpu');
+    hwEdRam = sel;
+    hwEdErr = hwEdEl.querySelector('.e404-hw-err');
+    document.body.appendChild(hwEdEl);
+    // 事件在元素创建后绑定（防 IIFE 初始化期绑 null 中止整段脚本）；遮罩点击=关闭
+    hwEdEl.addEventListener('click', function (ev) {
+      if (ev.target === hwEdEl) { closeHwEditor(); return; }
+      var a = ev.target.closest ? ev.target.closest('[data-act]') : null;
+      if (!a) return;
+      if (a.getAttribute('data-act') === 'save') saveHw(false);
+      else if (a.getAttribute('data-act') === 'savejudge') saveHw(true);
+      else if (a.getAttribute('data-act') === 'cancel') closeHwEditor();
+    });
+    return hwEdEl;
+  }
+  function openHwEditor() {
+    var ed = ensureHwEditor();
+    loadHwSuggest(); // #244 首次打开即拉补全数据源（懒加载，只拉一次）
+    hwEdSlug = hwTipSlug || '';
+    // Save & judge 只在有目标游戏（⚡ 来源行）时可用；无来源（非 tooltip 打开）隐藏
+    var sj = ed.querySelector('.e404-hw-btn.savejudge');
+    if (sj) sj.style.display = hwEdSlug ? '' : 'none';
+    // 预填当前将用于判定的硬件（judgeQS = URL 参数优先/回落已存 My PC，与 ⚡ 同源零分裂）
+    var hw = hwPreview() || {};
+    hwEdGpu.value = hw.gpu || '';
+    hwEdCpu.value = hw.cpu || '';
+    hwEdErr.textContent = '';
+    var cur = String(hw.ram || '16');
+    if (!/^\d+$/.test(cur)) cur = '16';
+    var exists = Array.prototype.some.call(hwEdRam.options, function (o) { return o.value === cur; });
+    if (!exists) {
+      var o = document.createElement('option');
+      o.value = cur; o.textContent = cur + ' GB';
+      hwEdRam.appendChild(o);
+    }
+    hwEdRam.value = cur;
+    ed.classList.add('show');
+    hide();      // 收起联想列表（编辑器全屏遮罩覆盖）
+    hideHwTip(); // 收起 ⚡ 预览 tooltip
+    setTimeout(function () { hwEdGpu.focus(); }, 30);
+  }
+  function closeHwEditor() {
+    if (hwEdEl) hwEdEl.classList.remove('show');
+  }
+  function saveHw(go) {
+    var g = hwEdGpu.value.trim(), c = hwEdCpu.value.trim();
+    if (!g && !c) {
+      hwEdErr.textContent = 'Enter at least a GPU or CPU name to check.';
+      return;
+    }
+    try { localStorage.setItem('caniplay_hw', JSON.stringify({ gpu: g, cpu: c, ram: hwEdRam.value })); } catch (e) {}
+    hwEdited = true;
+    refreshJudgeQS();
+    closeHwEditor();
+    // #238 Save & judge：保存后带新硬件直达该行游戏判定页（hwEdited 使已存新值优先于 URL 参数）
+    // #239 门控：清单已载入且目标无静态判定页 → 回落 plain Save（不导航到无判定面板的动态页）
+    if (go && hwEdSlug && pagesHas(hwEdSlug)) {
+      location.href = '/caniplay/game/' + hwEdSlug + '.html' + judgeQS;
+      return;
+    }
+    toast('My PC updated — ⚡ checks now use your <b>new hardware</b>');
+  }
+  // tooltip 挂 body（非 list 内），chips/✏️ Edit 点击用 document 委托（行重渲染不受影响）
+  document.addEventListener('click', function (ev) {
+    if (!ev.target || !ev.target.closest) return;
+    var t = ev.target.closest('.e404-hw-chip, .e404-hw-edit');
+    if (t) { ev.preventDefault(); openHwEditor(); }
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && hwEdEl && hwEdEl.classList.contains('show')) closeHwEditor();
+  });
+})();
+</script>
+</body>
+</html>
