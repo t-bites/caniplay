@@ -2844,8 +2844,71 @@
   const verdict = document.getElementById('verdict');
   if (!gpuInp || !cpuInp || !ramSel || !verdict) return;
   const HW_KEY = 'caniplay_hw';
-  let hw = {};
-  try { hw = JSON.parse(localStorage.getItem(HW_KEY)) || {}; } catch (e) { hw = {}; }
+  // 自动判定（⌘K 面板同用 __HW_WAITERS 防竞态）——须在早退守卫之前定义，供跨 tab 同步
+  // 在「无保存硬件打开的页」首次启用时调用（auto 是 const，早退后未初始化会 ReferenceError）。
+  const auto = () => { try { btn.click(); } catch (e) {} };
+  const chip = (l, v) => `<span class="hw-chip"><b>${l}</b> ${v}</span>`;
+  // 提示条渲染须在早退守卫之前定义：跨 tab 同步可能在「无保存硬件打开的页」首次启用时调用，
+  // 若 chip/renderHint 在早退 return 之后声明则从未初始化 → TDZ ReferenceError（页开无 hw 时实测）。
+  function renderHint(fromShared, o) {
+    if (!hint || !hint.isConnected) { hint = document.createElement('div'); hint.className = 'hw-hint'; verdict.parentNode.insertBefore(hint, verdict); }
+    hint.innerHTML = (fromShared ? '🔗 Check from shared link' : '🖥 Auto-checked with your saved PC') +
+      ` ${chip('GPU', o.gpu || '—')} ${chip('CPU', o.cpu || '—')} ${chip('RAM', (o.ram || 16) + ' GB')}` +
+      `<button type="button" class="hw-clear" title="Clear saved PC & inputs">✕ Clear</button>`;
+    hint.querySelector('.hw-clear').addEventListener('click', () => {
+      hintDismissed = true;
+      try { localStorage.removeItem(HW_KEY); } catch (e) {}
+      gpuInp.value = ''; cpuInp.value = '';
+      verdict.innerHTML = '';
+      hint.remove();
+    });
+  }
+  const hwRead = () => { let o = {}; try { o = JSON.parse(localStorage.getItem(HW_KEY)) || {}; } catch (e) { o = {}; } return o; };
+  let hw = hwRead();
+  // #259 跨标签页 My PC 双向实时同步（404 编辑器/对比弹层/详情页共享同一份 caniplay_hw）：
+  // 其他 tab 保存/清除 My PC 后本页实时刷新预填+判定+提示条（storage 事件仅跨 tab 触发，
+  // 本页自写不自触）。守卫：提示条未启用/已 ✕ 清除 → 不复活；他 tab 清空 → 镜像 ✕ 行为；
+  // 预填仍守「仅空输入框」防覆盖手输。
+  let hint = null;
+  let hintMode = false;   // 提示条来源标注：true=来自分享链接
+  let hintDismissed = false;  // 本页 ✕ Clear 后不复活；他 tab 清空/再存仍跟随共享 hw
+  let gpuAuto = false, cpuAuto = false;  // 该输入框当前值由自动预填写入（用户手输即清）
+  let gpuAutoVal = null, cpuAutoVal = null;  // 自动预填时的值（值被改 → 视为用户接管）
+  // 只认用户真实输入（isTrusted）：app.js 数据就绪后会向 .combo-wrap input 派发合成
+  // input 事件（值不变刷新下拉），该合成事件不视为用户手输。
+  gpuInp.addEventListener('input', (e) => { if (e.isTrusted) { gpuAuto = false; gpuAutoVal = null; } });
+  cpuInp.addEventListener('input', (e) => { if (e.isTrusted) { cpuAuto = false; cpuAutoVal = null; } });
+  const syncFromStorage = () => {
+    const nw = hwRead();
+    if (hintDismissed) return;               // 本页已显式 ✕ 清除 → 不复活
+    if (!nw.gpu && !nw.cpu) {                // 他 tab 清空 My PC → 镜像 ✕ 行为
+      if (hint && hint.isConnected) {
+        gpuInp.value = ''; cpuInp.value = '';
+        gpuAuto = cpuAuto = false; gpuAutoVal = cpuAutoVal = null;
+        verdict.innerHTML = '';
+        hint.remove();
+      }
+      return;
+    }
+    hw = nw;
+    // 自动预填字段随共享 hw 更新（值仍等于自动预填值才视为可接管）；用户手输不覆盖；
+    // 空字段照常补填。
+    if (hw.gpu) {
+      const managed = gpuAuto && gpuInp.value === gpuAutoVal;
+      if (managed || !gpuInp.value) { gpuInp.value = hw.gpu; gpuAuto = true; gpuAutoVal = hw.gpu; }
+    }
+    if (hw.cpu) {
+      const managed = cpuAuto && cpuInp.value === cpuAutoVal;
+      if (managed || !cpuInp.value) { cpuInp.value = hw.cpu; cpuAuto = true; cpuAutoVal = hw.cpu; }
+    }
+    if (hw.ram) { const o = [...ramSel.options].find(x => x.value === String(hw.ram)); if (o) ramSel.value = String(hw.ram); }
+    renderHint(hintMode, hw);                // 刷新/新建提示条 chips（来源标注保持）
+    if (window.__HW && window.__HW.gpus && window.__HW.gpus.length) auto();
+    else (window.__HW_WAITERS = window.__HW_WAITERS || []).push(auto);
+  };
+  window.addEventListener('storage', e => { if (e.key === HW_KEY || e.key === null) syncFromStorage(); });
+  try { window.__HWDETAIL_SYNC = syncFromStorage; } catch (e) {}
+  try { window.__HWSYNC_DEBUG = () => ({ gpuAuto: gpuAuto, cpuAuto: cpuAuto, gpuAutoVal: gpuAutoVal, cpuAutoVal: cpuAutoVal, gpuVal: gpuInp.value, cpuVal: cpuInp.value, hw: hw }); } catch (e) {}
   // #45 分享判定深链（CYRI 式）：URL ?gpu=&cpu=&ram= 显式硬件——来自他人分享的判定链接，
   // 优先级高于本地保存的 My PC（显式意图），打开即自动判定同一配置；并写回 caniplay_hw
   // （对比弹层/下次访问复用同一份 My PC）。
@@ -2854,6 +2917,7 @@
   const urlCpu = (qps.get('cpu') || '').trim();
   const urlRam = (qps.get('ram') || '').trim();
   const fromUrl = !!(urlGpu || urlCpu || urlRam);
+  hintMode = fromUrl;
   if (urlGpu) hw.gpu = urlGpu;
   if (urlCpu) hw.cpu = urlCpu;
   if (urlRam && /^\d+$/.test(urlRam)) hw.ram = parseInt(urlRam, 10);
@@ -2862,28 +2926,15 @@
     try { localStorage.setItem(HW_KEY, JSON.stringify({ gpu: hw.gpu || '', cpu: hw.cpu || '', ram: hw.ram || 16 })); } catch (e) {}
   }
 
-  // 预填（仅当输入框为空，避免覆盖用户手输）
-  if (!gpuInp.value && hw.gpu) gpuInp.value = hw.gpu;
-  if (!cpuInp.value && hw.cpu) cpuInp.value = hw.cpu;
+  // 预填（输入框为空或已是 hw 值 → 视为自动预填可接管；用户手输不同值不覆盖）
+  if (hw.gpu && (!gpuInp.value || gpuInp.value === hw.gpu)) { gpuInp.value = hw.gpu; gpuAuto = true; gpuAutoVal = hw.gpu; }
+  if (hw.cpu && (!cpuInp.value || cpuInp.value === hw.cpu)) { cpuInp.value = hw.cpu; cpuAuto = true; cpuAutoVal = hw.cpu; }
   if (hw.ram) { const o = [...ramSel.options].find(x => x.value === String(hw.ram)); if (o) ramSel.value = String(hw.ram); }
 
-  // 提示条（说明自动判定来源 + 一键清除）
-  const hint = document.createElement('div');
-  hint.className = 'hw-hint';
-  const chip = (l, v) => `<span class="hw-chip"><b>${l}</b> ${v}</span>`;
-  hint.innerHTML = (fromUrl ? '🔗 Check from shared link' : '🖥 Auto-checked with your saved PC') +
-    ` ${chip('GPU', hw.gpu || '—')} ${chip('CPU', hw.cpu || '—')} ${chip('RAM', (hw.ram || 16) + ' GB')}` +
-    `<button type="button" class="hw-clear" title="Clear saved PC & inputs">✕ Clear</button>`;
-  verdict.parentNode.insertBefore(hint, verdict);
-  hint.querySelector('.hw-clear').addEventListener('click', () => {
-    try { localStorage.removeItem(HW_KEY); } catch (e) {}
-    gpuInp.value = ''; cpuInp.value = '';
-    verdict.innerHTML = '';
-    hint.remove();
-  });
+  // 提示条（说明自动判定来源 + 一键清除；chip/renderHint 已在 IIFE 顶部定义）
+  renderHint(hintMode, hw);
 
-  // HW 数据就绪后自动判定（与 ⌘K 面板同用 __HW_WAITERS 防竞态）
-  const auto = () => { try { btn.click(); } catch (e) {} };
+  // HW 数据就绪后自动判定（auto 已在 IIFE 顶部定义，供跨 tab 同步与初始判定共用）
   if (window.__HW && window.__HW.gpus && window.__HW.gpus.length) auto();
   else (window.__HW_WAITERS = window.__HW_WAITERS || []).push(auto);
 
