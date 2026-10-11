@@ -1707,6 +1707,18 @@
                 e.preventDefault();
                 btns[n].focus();
               });
+              // #289 Tab/Shift+Tab 圈在菜单内（filter dropdown 标准闭环）：菜单开着时
+              // Tab 只在 项/⊖/底部 Browse 链接 间回绕循环，直到选择或关闭才放出焦点；
+              // 否则焦点游走全页而菜单仍悬空打开 = 键盘用户迷失态（焦点在游戏卡、菜单还开着）。
+              menuEl.addEventListener('keydown', (e) => {
+                if (e.key !== 'Tab') return;
+                const fb = [...menuEl.querySelectorAll('.feat-add-item, .feat-add-ex, .feat-add-all a')].filter(el => !el.disabled);
+                if (!fb.length) return;
+                const i = fb.indexOf(document.activeElement);
+                e.preventDefault();
+                const n = e.shiftKey ? (i <= 0 ? fb.length - 1 : i - 1) : (i < 0 ? 0 : (i + 1) % fb.length);
+                fb[n].focus();
+              });
               menuEl.addEventListener('click', (e) => {
                 // #49 ⊖ 排除按钮：从包含（若有）移到排除列表
                 const exBtn = e.target.closest('.feat-add-ex');
@@ -1716,6 +1728,8 @@
                   window.__FEAT_EXCL = [...new Set([...window.__FEAT_EXCL, s])];
                   window.__FEAT_SLUGS = window.__FEAT_SLUGS.filter(x => x !== s);
                   menuEl.hidden = true;
+                  // #289 选择后焦点还给触发钮（菜单关、焦点不落在隐藏元素上，与 Escape 同口径）
+                  hint.querySelector('.feat-add').focus();
                   loadSlug(s).then(() => { syncUrl(); applyFeat(); });
                   return;
                 }
@@ -1723,6 +1737,8 @@
                 if (!item || item.disabled) return;
                 window.__FEAT_SLUGS = [...new Set([...window.__FEAT_SLUGS, item.dataset.slug])];
                 menuEl.hidden = true;
+                // #289 选择后焦点还给触发钮（菜单关、焦点不落在隐藏元素上，与 Escape 同口径）
+                hint.querySelector('.feat-add').focus();
                 loadSlug(item.dataset.slug).then(() => { syncUrl(); applyFeat(); });
               });
               document.addEventListener('click', (e) => {
