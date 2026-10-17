@@ -474,6 +474,8 @@ html.i18n-pending .crumbs { visibility: hidden; }
   padding: 10px 24px 0; font-size: .8rem; color: var(--muted); max-width: 1200px; margin: 0 auto; }
 .crumbs a { color: var(--accent); }
 .crumbs a:hover { text-decoration: underline; }
+/* #325 面包屑链接 :focus-visible（hover 只有下划线，键盘 Tab 零指示——focus-visible sweep 收官：.crumbs a 是全站最后一个无环链接族；同 #323 footer-top 口径，字色 + 外环，零位移）。 */
+.crumbs a:focus-visible { color: var(--accent); text-decoration: underline; outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 4px; }
 .crumb-cur { color: var(--text); font-weight: 600; }
 .crumb-sep { color: var(--muted); opacity: .7; }
 
