@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e16">
+<!-- #371 Steam 图片 CDN preconnect（Steam/GOG 商店口径：首屏封面 40+ 张全走跨源图床，
+     加速 DNS+TLS 握手；仅 preconnect 无下载，零流量浪费） -->
+<link rel="preconnect" href="https://shared.akamai.steamstatic.com">
+<link rel="preconnect" href="https://cdn.cloudflare.steamstatic.com">
+<title>Game Gear — PC & Peripheral Recommendations | CanIPlay</title>
+<meta name="description" content="Recommended GPUs, CPUs and gaming peripherals for the best gaming experience.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CanIPlay">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:title" content="Game Gear — PC & Peripheral Recommendations | CanIPlay">
+<meta property="og:description" content="Recommended GPUs, CPUs and gaming peripherals for the best gaming experience.">
+<meta property="og:url" content="https://t-bites.github.io/caniplay/game-gear.html">
+<meta property="og:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Game Gear — PC & Peripheral Recommendations | CanIPlay">
+<meta name="twitter:description" content="Recommended GPUs, CPUs and gaming peripherals for the best gaming experience.">
+<meta name="twitter:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<link rel="canonical" href="https://t-bites.github.io/caniplay/game-gear.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+<!-- #357 PWA 主屏图标（iOS/Android 主屏口径）：SVG emoji favicon 仅浏览器标签有效，
+     iOS Safari 主屏/Apple Touch 要求 180px PNG，Android 安装横幅要求 manifest+192/512。
+      前缀保证详情页（../）与顶层页同源。 -->
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/manifest.webmanifest">
+<link rel="stylesheet" href="assets/style.css?v=1793480416">
+<!-- #299 FOUC gate：非英文首帧前隐藏静态英文基线 chrome（nav/footer/crumbs），
+     i18n.js 同步应用翻译后释放 i18n-pending。必须内联在 <head>，先于 body 解析执行，
+     否则浏览器会用英文基线完成首帧绘制再切换。 -->
+<script>try{(function(){
+  var l=(location.search.match(/[?&]lang=([^&]+)/)||[])[1]||localStorage.getItem('caniplay_lang')||'';
+  if(l&&l!=='en')document.documentElement.classList.add('i18n-pending');
+  // 兜底：i18n.js 加载失败时 2s 后释放，防 chrome 永久隐藏
+  setTimeout(function(){try{document.documentElement.classList.remove('i18n-pending')}catch(e){}},2000);
+})()}catch(e){}</script>
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html">🎮 CanIPlay</a>
+  <span class="nav-tabs">
+    <a href="index.html" class="tab" data-i18n="nav.home">Can I Play</a>
+    <a href="game-gear.html" class="tab active" data-i18n="nav.gear">Game Gear</a>
+    <a href="top-games.html" class="tab" data-i18n="nav.top">Top Games</a>
+    <a href="top-favs.html" class="tab" data-i18n="nav.mytop">My Top</a>
+    <a href="features.html" class="tab" data-i18n="nav.features">Features</a>
+    <a href="game-news.html" class="tab" data-i18n="nav.news">Game News</a>
+    <a href="game-sales.html" class="tab" data-i18n="nav.sales">Game Sales</a>
+  </span>
+</nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span class="crumb-sep">›</span> <span class="crumb-cur" aria-current="page">Game Gear</span></nav>
+<header class="hero small"><h1>Game Gear</h1>
+  <p>Search any GPU / CPU to see specs, value & where to buy. 🛒 links support the site.</p>
+  
+  <div class="hw-panel">
+    <div class="hw-panel-head">
+      <h2>🖥️ My Hardware</h2>
+    </div>
+    <div class="hw-panel-row">
+      <div class="combo-wrap">
+        <input id="gpu-input" type="text" enterkeyhint="done" placeholder="GPU (e.g. RTX 3060)" autocomplete="off" data-type="gpu" aria-label="Graphics card (GPU)">
+        <div class="combo-list" id="gpu-combo"></div>
+      </div>
+      <div class="combo-wrap">
+        <input id="cpu-input" type="text" enterkeyhint="done" placeholder="CPU (e.g. i5-12400F)" autocomplete="off" data-type="cpu" aria-label="Processor (CPU)">
+        <div class="combo-list" id="cpu-combo"></div>
+      </div>
+      <select id="ram-select" title="RAM" aria-label="Memory (RAM)">
+        <option value="4">4 GB RAM</option>
+        <option value="8">8 GB RAM</option>
+        <option value="16" selected>16 GB RAM</option>
+        <option value="32">32 GB RAM</option>
+        <option value="64">64 GB RAM</option>
+      </select>
+      <div class="hw-actions">
+        <button id="check-btn" class="hw-check-btn">Check</button>
+      </div>
+    </div>
+    <div class="hw-groups" id="hw-groups"></div>
+    <button type="button" class="hw-add-group" id="hw-add-group">+ Save as new group</button>
+  </div>
+  <div id="gear-result" class="gear-result"></div>
+</header>
+<section class="content-list">
+  <h2>🖥️ Top GPUs</h2>
+  <a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+5090&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 5090</span><span class="row-genres">38,992 G3D · $3,368 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+4090&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 4090</span><span class="row-genres">38,024 G3D · $4,490 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+5080&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 5080</span><span class="row-genres">35,647 G3D · $2,283 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+4080&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 4080</span><span class="row-genres">34,442 G3D · $1,556 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+4080+SUPER&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 4080 SUPER</span><span class="row-genres">34,217 G3D · $1,999 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=RTX+PRO+4500+Blackwell&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">RTX PRO 4500 Blackwell</span><span class="row-genres">33,317 G3D · $4,899 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+5070+Ti&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 5070 Ti</span><span class="row-genres">32,328 G3D · $1,687 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=RTX+PRO+5000+Blackwell&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">RTX PRO 5000 Blackwell</span><span class="row-genres">32,265 G3D · $4,559 · 🛒</span></a>
+  <h2>🧠 Top CPUs</h2>
+  <a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9965&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9965</span><span class="row-genres">160,542 CPU Mark · $14,813 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9655P&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9655P</span><span class="row-genres">160,432 CPU Mark · $10,811 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9B45&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9B45</span><span class="row-genres">158,790 CPU Mark · $13,564 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9655&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9655</span><span class="row-genres">156,110 CPU Mark · $11,852 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9845&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9845</span><span class="row-genres">152,985 CPU Mark · $13,564 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9755&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9755</span><span class="row-genres">150,848 CPU Mark · $12,984 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+Ryzen+Threadripper+PRO+9985WX&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD Ryzen Threadripper PRO 9985WX</span><span class="row-genres">150,121 CPU Mark · $7,999 · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+EPYC+9575F&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD EPYC 9575F</span><span class="row-genres">148,066 CPU Mark · $6,950 · 🛒</span></a>
+  <h2 data-i18n="gear.value_gpu">💰 Best Value GPUs</h2>
+  <a class="game-row" href="https://www.amazon.com/s?k=Radeon+RX+5700+XT&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Radeon RX 5700 XT</span><span class="row-genres">16,023 G3D · $229 · 70.0 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Radeon+Pro+W5700&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Radeon Pro W5700</span><span class="row-genres">14,127 G3D · $216 · 65.4 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Radeon+RX+7650+GRE&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Radeon RX 7650 GRE</span><span class="row-genres">18,056 G3D · $279 · 64.7 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Intel+Arc+B580&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Arc B580</span><span class="row-genres">16,111 G3D · $249 · 64.7 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+GTX+1660&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce GTX 1660</span><span class="row-genres">11,610 G3D · $204 · 56.9 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=NVIDIA+A40&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">NVIDIA A40</span><span class="row-genres">13,900 G3D · $259 · 53.7 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=GeForce+RTX+3080&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">GeForce RTX 3080</span><span class="row-genres">24,970 G3D · $469 · 53.2 G3D/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Radeon+RX+6700M&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Radeon RX 6700M</span><span class="row-genres">13,676 G3D · $269 · 50.8 G3D/$ · 🛒</span></a>
+  <h2 data-i18n="gear.value_cpu">💰 Best Value CPUs</h2>
+  <a class="game-row" href="https://www.amazon.com/s?k=Intel+Core+Ultra+5+250KF+Plus&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Core Ultra 5 250KF Plus</span><span class="row-genres">51,110 CPU Mark · $199 · 256.8 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Intel+Core+Ultra+5+250K+Plus&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Core Ultra 5 250K Plus</span><span class="row-genres">51,365 CPU Mark · $214 · 240.0 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Intel+Core+Ultra+5+225F&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Core Ultra 5 225F</span><span class="row-genres">30,913 CPU Mark · $135 · 229.0 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Intel+Core+Ultra+5+245K&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Core Ultra 5 245K</span><span class="row-genres">42,995 CPU Mark · $189 · 227.5 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+Ryzen+9+3900X&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD Ryzen 9 3900X</span><span class="row-genres">32,464 CPU Mark · $144 · 225.4 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Intel+Core+Ultra+5+245KF&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Core Ultra 5 245KF</span><span class="row-genres">43,045 CPU Mark · $198 · 217.4 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=Intel+Core+Ultra+7+270K+Plus&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Intel Core Ultra 7 270K Plus</span><span class="row-genres">68,512 CPU Mark · $316 · 216.8 CPU Mark/$ · 🛒</span></a><a class="game-row" href="https://www.amazon.com/s?k=AMD+Ryzen+7+5800X&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">AMD Ryzen 7 5800X</span><span class="row-genres">27,656 CPU Mark · $135 · 204.9 CPU Mark/$ · 🛒</span></a>
+  <h2>🖱️ Gaming Peripherals</h2>
+  <a class="game-row" href="https://www.amazon.com/s?k=gaming+monitor&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Gaming Monitors</span><span class="row-genres">144Hz+ 🛒</span></a>
+  <a class="game-row" href="https://www.amazon.com/s?k=mechanical+gaming+keyboard&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Mechanical Keyboards</span><span class="row-genres">🛒</span></a>
+  <a class="game-row" href="https://www.amazon.com/s?k=gaming+mouse&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Gaming Mice</span><span class="row-genres">🛒</span></a>
+  <a class="game-row" href="https://www.amazon.com/s?k=gaming+headset&tag=caniplay0b-20" target="_blank" rel="sponsored noopener"><span class="row-name">Gaming Headsets</span><span class="row-genres">🛒</span></a>
+</section>
+<footer class="footer">
+  <p data-i18n="footer.tagline">CanIPlay — game compatibility checker. Hardware data: PassMark. Game data: Steam.</p>
+  <p class="foot-src"><span data-i18n="footer.srclabel">Data sources:</span> <a href="https://www.passmark.com/" target="_blank" rel="noopener">PassMark</a> · <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a></p>
+  <p><a href="index.html" data-i18n="crumb.home">Home</a> · <a href="game-sales.html" data-i18n="footer.deals">Deals &amp; Free Games</a></p>
+  <div class="footer-top"><h3>Top Games</h3><ul><li><a href="game/1741550.html">来自女巫森林的法师</a></li><li><a href="game/2494400.html">一克帝国迷你版</a></li><li><a href="game/cyberphobia-prologue.html">Cyberphobia: Prologue</a></li><li><a href="game/fox-shooter.html">Fox Shooter</a></li><li><a href="game/corporate-board.html">Corporate Board</a></li><li><a href="game/movavi-video-suite-2026.html">Movavi Video Suite 2026</a></li><li><a href="game/movavi-video-suite-2025-steam-edition.html">Movavi Video Suite 2025  Steam Edition</a></li><li><a href="game/appgamekit-studio.html">AppGameKit Studio</a></li><li><a href="game/waste-it.html">Waste It</a></li><li><a href="game/aerofly-rc-10-rc-flight-simulator.html">aerofly RC 10 - RC Flight Simulator</a></li></ul></div>
+</footer>
+<script src="assets/app.js?v=1793480416"></script>
+<script src="assets/i18n.js?v=1793480416"></script>
+</body>
+</html>

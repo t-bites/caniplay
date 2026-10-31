@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e16">
+<!-- #371 Steam 图片 CDN preconnect（Steam/GOG 商店口径：首屏封面 40+ 张全走跨源图床，
+     加速 DNS+TLS 握手；仅 preconnect 无下载，零流量浪费） -->
+<link rel="preconnect" href="https://shared.akamai.steamstatic.com">
+<link rel="preconnect" href="https://cdn.cloudflare.steamstatic.com">
+<title>Game Deals & Free Games | CanIPlay</title>
+<meta name="description" content="Top Steam discounts and free-to-play games, refreshed from live data.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CanIPlay">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:title" content="Game Deals & Free Games | CanIPlay">
+<meta property="og:description" content="Top Steam discounts and free-to-play games, refreshed from live data.">
+<meta property="og:url" content="https://t-bites.github.io/caniplay/deals.html">
+<meta property="og:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Game Deals & Free Games | CanIPlay">
+<meta name="twitter:description" content="Top Steam discounts and free-to-play games, refreshed from live data.">
+<meta name="twitter:image" content="https://t-bites.github.io/caniplay/assets/og-image.png">
+<link rel="canonical" href="https://t-bites.github.io/caniplay/deals.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+<!-- #357 PWA 主屏图标（iOS/Android 主屏口径）：SVG emoji favicon 仅浏览器标签有效，
+     iOS Safari 主屏/Apple Touch 要求 180px PNG，Android 安装横幅要求 manifest+192/512。
+      前缀保证详情页（../）与顶层页同源。 -->
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/manifest.webmanifest">
+<link rel="stylesheet" href="assets/style.css?v=1793480416">
+<!-- #299 FOUC gate：非英文首帧前隐藏静态英文基线 chrome（nav/footer/crumbs），
+     i18n.js 同步应用翻译后释放 i18n-pending。必须内联在 <head>，先于 body 解析执行，
+     否则浏览器会用英文基线完成首帧绘制再切换。 -->
+<script>try{(function(){
+  var l=(location.search.match(/[?&]lang=([^&]+)/)||[])[1]||localStorage.getItem('caniplay_lang')||'';
+  if(l&&l!=='en')document.documentElement.classList.add('i18n-pending');
+  // 兜底：i18n.js 加载失败时 2s 后释放，防 chrome 永久隐藏
+  setTimeout(function(){try{document.documentElement.classList.remove('i18n-pending')}catch(e){}},2000);
+})()}catch(e){}</script>
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html">🎮 CanIPlay</a>
+  <span class="nav-tabs">
+    <a href="index.html" class="tab active" data-i18n="nav.home">Can I Play</a>
+    <a href="game-gear.html" class="tab" data-i18n="nav.gear">Game Gear</a>
+    <a href="top-games.html" class="tab" data-i18n="nav.top">Top Games</a>
+    <a href="top-favs.html" class="tab" data-i18n="nav.mytop">My Top</a>
+    <a href="features.html" class="tab" data-i18n="nav.features">Features</a>
+    <a href="game-news.html" class="tab" data-i18n="nav.news">Game News</a>
+    <a href="game-sales.html" class="tab" data-i18n="nav.sales">Game Sales</a>
+  </span>
+</nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span class="crumb-sep">›</span> <span class="crumb-cur" aria-current="page">Deals &amp; Free Games</span></nav>
+<header class="hero small">
+  <h1>Game Deals &amp; Free Games</h1>
+  <p>Top Steam discounts and free-to-play titles, refreshed every crawl.</p>
+</header>
+<section class="content-list">
+  <h2>🔥 Best discounts</h2>
+  <div class="game-grid"><div class="wcard" data-a="214340"><a class="game-card" href="game/deponia.html" data-name="deponia">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214340/header.jpg?t=1785262567" alt="Deponia" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-100%</span>
+    <h3 class="card-name">Deponia</h3>
+    <p class="card-price"><s>$9.99</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="214340" aria-pressed="false" title="Add to wishlist" aria-label="Add Deponia to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="2630810"><a class="game-card" href="game/3d-puzzle-building.html" data-name="3d puzzle - building">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2630810/header.jpg?t=1697663500" alt="3D PUZZLE - Building" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">3D PUZZLE - Building</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="2630810" aria-pressed="false" title="Add to wishlist" aria-label="Add 3D PUZZLE - Building to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="3009780"><a class="game-card" href="game/3d-puzzle-underground.html" data-name="3d puzzle - underground">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3009780/header.jpg?t=1721944832" alt="3D PUZZLE - Underground" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">3D PUZZLE - Underground</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="3009780" aria-pressed="false" title="Add to wishlist" aria-label="Add 3D PUZZLE - Underground to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="3009790"><a class="game-card" href="game/3d-puzzle-rusty.html" data-name="3d puzzle - rusty">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3009790/header.jpg?t=1721944698" alt="3D PUZZLE - Rusty" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">3D PUZZLE - Rusty</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="3009790" aria-pressed="false" title="Add to wishlist" aria-label="Add 3D PUZZLE - Rusty to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="3009820"><a class="game-card" href="game/3d-puzzle-hospital-4.html" data-name="3d puzzle - hospital 4">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3009820/header.jpg?t=1721944476" alt="3D PUZZLE - Hospital 4" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">3D PUZZLE - Hospital 4</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="3009820" aria-pressed="false" title="Add to wishlist" aria-label="Add 3D PUZZLE - Hospital 4 to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="3120290"><a class="game-card" href="game/3d-puzzle-courtyard.html" data-name="3d puzzle - courtyard">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3120290/header.jpg?t=1747245191" alt="3D PUZZLE - Courtyard" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">3D PUZZLE - Courtyard</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="3120290" aria-pressed="false" title="Add to wishlist" aria-label="Add 3D PUZZLE - Courtyard to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="3517270"><a class="game-card" href="game/room-football-royale-lands.html" data-name="room football - royale lands">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3517270/header.jpg?t=1745519877" alt="ROOM FOOTBALL - Royale Lands" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">ROOM FOOTBALL - Royale Lands</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="3517270" aria-pressed="false" title="Add to wishlist" aria-label="Add ROOM FOOTBALL - Royale Lands to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="4256830"><a class="game-card" href="game/catch-the-chiken.html" data-name="catch the chiken">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4256830/fd47a7834a69513513c5ed508b067dbb27741428/header.jpg?t=1770679600" alt="Catch the Chiken" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">Catch the Chiken</h3>
+    <p class="card-price"><s>$199.80</s> <b>$9.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="4256830" aria-pressed="false" title="Add to wishlist" aria-label="Add Catch the Chiken to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="387440"><a class="game-card" href="game/smite-ultimate-god-pack.html" data-name="smite® - ultimate god pack">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/387440/header.jpg?t=1706629506" alt="SMITE® - Ultimate God Pack" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">SMITE® - Ultimate God Pack</h3>
+    <p class="card-price"><s>$29.80</s> <b>$1.49</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="387440" aria-pressed="false" title="Add to wishlist" aria-label="Add SMITE® - Ultimate God Pack to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="2432630"><a class="game-card" href="game/mythical-agent.html" data-name="mythical agent">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2432630/header.jpg?t=1775316802" alt="Mythical Agent" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">Mythical Agent</h3>
+    <p class="card-price"><s>$19.80</s> <b>$0.99</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="2432630" aria-pressed="false" title="Add to wishlist" aria-label="Add Mythical Agent to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="1987550"><a class="game-card" href="game/via-mortis.html" data-name="via mortis">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1987550/header.jpg?t=1766062163" alt="Via Mortis" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">Via Mortis</h3>
+    <p class="card-price"><s>$14.80</s> <b>$0.74</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="1987550" aria-pressed="false" title="Add to wishlist" aria-label="Add Via Mortis to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="2197170"><a class="game-card" href="game/aswang-detective-the-case-of-new-york.html" data-name="aswang detective: the case of new york">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2197170/header.jpg?t=1765895987" alt="Aswang Detective: The Case of New York" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge sale-big">-95%</span>
+    <h3 class="card-name">Aswang Detective: The Case of New York</h3>
+    <p class="card-price"><s>$14.80</s> <b>$0.74</b></p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="2197170" aria-pressed="false" title="Add to wishlist" aria-label="Add Aswang Detective: The Case of New York to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div></div>
+  <h2>🆓 Free to play</h2>
+  <div class="game-grid"><div class="wcard" data-a="5506880"><a class="game-card" href="game/starsunder.html" data-name="starsunder">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5506880/ddac435f61e8aa23ec5269b5c7f5fd0d59792bea/header.jpg?t=1793254055" alt="Starsunder" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Starsunder</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5506880" aria-pressed="false" title="Add to wishlist" aria-label="Add Starsunder to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5500590"><a class="game-card" href="game/task-bar-gambler.html" data-name="task bar gambler">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5500590/be5dec395ec72e7145ca386838de46cca546a6a8/header.jpg?t=1793047921" alt="Task Bar Gambler" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Task Bar Gambler</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5500590" aria-pressed="false" title="Add to wishlist" aria-label="Add Task Bar Gambler to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5500130"><a class="game-card" href="game/relic-radar.html" data-name="relic radar">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5500130/eb2a80223b3c7b448e2249a89b088edf992370ec/header.jpg?t=1793145221" alt="Relic Radar" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Relic Radar</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5500130" aria-pressed="false" title="Add to wishlist" aria-label="Add Relic Radar to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5499300"><a class="game-card" href="game/white-ninja.html" data-name="white ninja">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5499300/e56036623355d999183abfde12a7858a216df7de/header.jpg?t=1793086887" alt="White Ninja" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">White Ninja</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5499300" aria-pressed="false" title="Add to wishlist" aria-label="Add White Ninja to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5498810"><a class="game-card" href="game/monquest.html" data-name="monquest">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5498810/676ea41af0554a65cb68cc28b78c46361e5a550b/header.jpg?t=1793046431" alt="Monquest" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Monquest</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5498810" aria-pressed="false" title="Add to wishlist" aria-label="Add Monquest to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5498660"><a class="game-card" href="game/cozy-paws.html" data-name="cozy paws">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5498660/10e3f205ac4bedf047886be7e5ee4d3d2be7fae5/header.jpg?t=1793032778" alt="Cozy Paws" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Cozy Paws</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5498660" aria-pressed="false" title="Add to wishlist" aria-label="Add Cozy Paws to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5497490"><a class="game-card" href="game/labyrinth-stars.html" data-name="labyrinth stars">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5497490/2bd7f7285c5eee70056b1569f86b64f5bc945b0d/header.jpg?t=1793031715" alt="Labyrinth Stars" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Labyrinth Stars</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5497490" aria-pressed="false" title="Add to wishlist" aria-label="Add Labyrinth Stars to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5494850"><a class="game-card" href="game/age-of-me.html" data-name="age of me">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5494850/be43041553538d10bad9991b6ec37f2421cf829d/header.jpg?t=1793342231" alt="Age of Me" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Age of Me</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5494850" aria-pressed="false" title="Add to wishlist" aria-label="Add Age of Me to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5490870"><a class="game-card" href="game/horochis-challenge.html" data-name="horochi's challenge">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5490870/f1801ae0aa7535eab03d449da23ffd7b3a457bb9/header.jpg?t=1792807123" alt="Horochi&#x27;s Challenge" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">Horochi&#x27;s Challenge</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5490870" aria-pressed="false" title="Add to wishlist" aria-label="Add Horochi&#x27;s Challenge to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5490450"><a class="game-card" href="game/neotanker.html" data-name="neotanker">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5490450/65fcfe3c3c5cfdf50821c5761280b4e9b4fc5d6a/header.jpg?t=1792828558" alt="NeoTanker" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">NeoTanker</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5490450" aria-pressed="false" title="Add to wishlist" aria-label="Add NeoTanker to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5488610"><a class="game-card" href="game/.html" data-name="终端游戏：请审判我吧">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5488610/88b042442dd67f050dc3285348e30cd819c4915c/header.jpg?t=1793333021" alt="终端游戏：请审判我吧" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">终端游戏：请审判我吧</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5488610" aria-pressed="false" title="Add to wishlist" aria-label="Add 终端游戏：请审判我吧 to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div>
+<div class="wcard" data-a="5487820"><a class="game-card" href="game/world-of-stick.html" data-name="world of stick">
+  <div class="thumb"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5487820/b3696e02921bcaa7163de28510999e24ed94457c/header.jpg?t=1792764090" alt="World of Stick" loading="lazy" decoding="async" onerror="this.remove()"></div>
+  <div class="card-body">
+    <span class="sale-badge">FREE</span>
+    <h3 class="card-name">World of Stick</h3>
+    <p class="card-price">Free to play</p>
+  </div>
+</a><button type="button" class="wl-btn" data-a="5487820" aria-pressed="false" title="Add to wishlist" aria-label="Add World of Stick to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2.2 4.5 5.8 4.5c2.3 0 4 1.4 5 3 .4.7 1 1.1 1.2 1.1s.8-.4 1.2-1.1c1-1.6 2.7-3 5-3C21.8 4.5 23.5 8 22 11.5 19.5 16.1 12 21 12 21Z" fill="currentColor"/></svg></button></div></div>
+</section>
+<footer class="footer">
+  <p data-i18n="footer.tagline">CanIPlay — game compatibility checker. Hardware data: PassMark. Game data: Steam.</p>
+  <p class="foot-src"><span data-i18n="footer.srclabel">Data sources:</span> <a href="https://www.passmark.com/" target="_blank" rel="noopener">PassMark</a> · <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a></p>
+  <p><a href="index.html" data-i18n="crumb.home">Home</a> · <a href="deals.html" data-i18n="footer.deals">Deals &amp; Free Games</a></p>
+  <div class="footer-top"><h3>Top Games</h3><ul><li><a href="game/1741550.html">来自女巫森林的法师</a></li><li><a href="game/2494400.html">一克帝国迷你版</a></li><li><a href="game/cyberphobia-prologue.html">Cyberphobia: Prologue</a></li><li><a href="game/fox-shooter.html">Fox Shooter</a></li><li><a href="game/corporate-board.html">Corporate Board</a></li><li><a href="game/movavi-video-suite-2026.html">Movavi Video Suite 2026</a></li><li><a href="game/movavi-video-suite-2025-steam-edition.html">Movavi Video Suite 2025  Steam Edition</a></li><li><a href="game/appgamekit-studio.html">AppGameKit Studio</a></li><li><a href="game/waste-it.html">Waste It</a></li><li><a href="game/aerofly-rc-10-rc-flight-simulator.html">aerofly RC 10 - RC Flight Simulator</a></li></ul></div>
+</footer>
+<script src="assets/app.js?v=1793480416"></script>
+<script src="assets/i18n.js?v=1793480416"></script>
+</body>
+</html>
