@@ -12,7 +12,7 @@
  * Safe on GH Pages (plain static file, no headers needed). Fail-open: every handler
  * wraps in try/catch; a broken SW never breaks page load — worst case it unregisters.
  */
-var CACHE = 'caniplay-v1794028657';
+var CACHE = 'caniplay-v1794045248';
 var OFFLINE_FALLBACK = '/caniplay/index.html';
 /* PRECACHE paths are scope-relative (/caniplay/…); sw.js ships stamped per build. */
 var PRECACHE = [
@@ -20,9 +20,9 @@ var PRECACHE = [
   '/caniplay/index.html',
   '/caniplay/games.html',
   '/caniplay/compare.html',
-  '/caniplay/assets/style.css?v=1794028657',
-  '/caniplay/assets/app.js?v=1794028657',
-  '/caniplay/assets/i18n.js?v=1794028657',
+  '/caniplay/assets/style.css?v=1794045248',
+  '/caniplay/assets/app.js?v=1794045248',
+  '/caniplay/assets/i18n.js?v=1794045248',
   '/caniplay/assets/manifest.webmanifest',
   '/caniplay/assets/icon-192.png',
   '/caniplay/assets/icon-512.png',

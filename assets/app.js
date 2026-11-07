@@ -1537,6 +1537,24 @@
             const scr = (window.__LIB_SCRAPED || 0).toLocaleString();
             if (gameTotal) gameTotal.textContent = T('games.total', '{n} games ({m} with specs)').replace('{n}', tot).replace('{m}', scr);
             if (gameSearch) gameSearch.placeholder = T('games.search.ph', 'Search {n} games (e.g. GTA, Elden Ring, Stardew)...').replace('{n}', tot);
+            // #405 空态 live 重绘：render 期按当时语言烤进的空态，语言切换后 title/sub/clear/dym
+            //   不随 i18n:changed 更新（此前只烤不重绘）——在 paintLibI18n 的 i18n:changed 分支里
+            //   若空态在 DOM 则按 data-empty-q/hadq（render 期烙的原始查询）重绘全部文案键。
+            const est = document.querySelector('.empty-state');
+            if (est) {
+              const eq = est.getAttribute('data-empty-q') || '';
+              const hadq = est.getAttribute('data-empty-hadq') === '1';
+              const ttl = est.querySelector('.empty-title');
+              if (ttl) ttl.textContent = T('empty.title', 'No games found');
+              const sub = est.querySelector('.empty-sub');
+              if (sub) sub.innerHTML = hadq
+                ? T('empty.sub.query', 'Nothing matches &quot;{q}&quot; in the database.').replace('{q}', '<b>' + String(eq).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</b>')
+                : T('empty.sub.plain', 'Try a different search term or clear your filters.');
+              const clr = est.querySelector('.empty-clear');
+              if (clr) clr.textContent = T('empty.clear', '✕ Clear all filters');
+              const dym = est.querySelector('.empty-dym-lbl');
+              if (dym) dym.textContent = T('empty.dym', 'Did you mean:');
+            }
             const flt = window.__FILTERED;
             if (flt) {
               const box = document.getElementById('result-count');
@@ -1687,6 +1705,7 @@
               // Levenshtein 最近名称（与 404.html suggestOth 同思路），点建议→重填搜索框并
               // 重新过滤直达结果。纯客户端零新数据（all 已在内存）。
               let dymHtml = '';
+              const safe = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');
               const q = (gameSearch && gameSearch.value || '').trim().toLowerCase();
               if (q.length >= 3) {
                 // 经典 DP Levenshtein，仅比较名称前 60 字符控制成本
@@ -1705,8 +1724,7 @@
                 };
                 // #231 Did you mean Top-5 模糊候选（#229 单建议扩展，Steam/Google 多候选式）：全库扫描
                 // 距离 ≤3 的候选按 (距离, appid) 升序取前 5（确定性，与独立重算同口径），点任一 → 重填搜索框直达。
-                const safe = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-                const cands = [];
+                                const cands = [];
                 // 显式排序确保确定性（与 Promise.all 加载时序无关，也兼容 __ALL_GAMES 可能未就绪）
                 const sortedAll = all.length ? [...all].sort((x, y) => (x.a || 0) - (y.a || 0)) : [];
                 const limit = Math.min(sortedAll.length, 30000); // 前 3 万款足够覆盖热门；兼顾成本
@@ -1735,7 +1753,7 @@
                     `</div>`;
                 }
               }
-              gameList.innerHTML = `<div class="empty-state">
+              gameList.innerHTML = `<div class="empty-state" data-empty-q="${safe(q)}" data-empty-hadq="${q ? 1 : 0}">
   <p class="empty-icon">🎮</p>
   <p class="empty-title">${I18N('empty.title', 'No games found')}</p>
   <p class="empty-sub">${q ? I18N('empty.sub.query', 'Nothing matches &quot;{q}&quot; in the database.').replace('{q}', `<b>${q.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</b>`) : I18N('empty.sub.plain', 'Try a different search term or clear your filters.')}</p>
