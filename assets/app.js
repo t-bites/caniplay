@@ -1529,7 +1529,31 @@
         try {
           const meta = await (await fetch(base + 'assets/data/index.json')).json();
           if (gameTotal) gameTotal.textContent = meta.total.toLocaleString() + ' games (' + meta.scraped.toLocaleString() + ' with specs)';
+          window.__LIB_TOTAL = meta.total; window.__LIB_SCRAPED = meta.scraped;
+          // #404 库页动态计数文案 i18n（Steam 中文站口径）：含计数的字符串走 I18N 桥按语言重绘
+          const paintLibI18n = () => {
+            const T = (k, f) => (window.i18n && window.i18n.t) ? (window.i18n.t(k, f) || f) : f;
+            const tot = ((window.__LIB_TOTAL || 278774)).toLocaleString();
+            const scr = (window.__LIB_SCRAPED || 0).toLocaleString();
+            if (gameTotal) gameTotal.textContent = T('games.total', '{n} games ({m} with specs)').replace('{n}', tot).replace('{m}', scr);
+            if (gameSearch) gameSearch.placeholder = T('games.search.ph', 'Search {n} games (e.g. GTA, Elden Ring, Stardew)...').replace('{n}', tot);
+            const flt = window.__FILTERED;
+            if (flt) {
+              const box = document.getElementById('result-count');
+              if (box) box.textContent = T('games.found', '{n} game(s) found').replace('{n}', flt.length.toLocaleString());
+              const moreBtn = document.getElementById('load-more');
+              if (moreBtn) {
+                const hasMore = flt.length > shown;
+                moreBtn.style.display = hasMore ? 'block' : 'none';
+                moreBtn.textContent = T('games.loadMore', 'Load more ({n} more)').replace('{n}', Math.min(120, flt.length - shown).toLocaleString());
+              }
+            }
+          };
+          window.__PAINTLIBI18N = paintLibI18n;
+          window.addEventListener('i18n:changed', () => { try { paintLibI18n(); } catch (e) {} });
+          paintLibI18n();
           const all = [];
+          let shown = 120;  // 初始显示更多（PC 大屏不空洞）——#404 顶部声明供 paintLibI18n 闭包先期读取（避免 TDZ）
           // #67 Wishlist 收藏（GG.deals 式）：localStorage caniplay_wl = appid 数组（上限 500）
           const wlLoad = () => { try { const a = JSON.parse(localStorage.getItem('caniplay_wl') || '[]'); return Array.isArray(a) ? a.filter(x => typeof x === 'number') : []; } catch (e) { return []; } };
           let wlSet = new Set(wlLoad());
@@ -1649,13 +1673,13 @@
             const _qsd = new URLSearchParams(window.location.search).get('sortdir');
             if (_qsd === 'asc' || _qsd === 'desc') sortDir = _qsd;
           } catch (e) {}
-          let shown = 120;  // 初始显示更多（PC 大屏不空洞）
+          shown = 120;  // 初始显示更多（PC 大屏不空洞）——#404 已顶部 let 声明，此处仅设初值
           const render = (items) => {
             // #401 首帧骨架屏结束：数据就绪首次渲染，清加载态（读屏/测试不再视为 busy）
             const glb = document.getElementById('game-list');
             if (glb && glb.getAttribute('aria-busy') === 'true') glb.setAttribute('aria-busy', 'false');
             const box = document.getElementById('result-count');
-            if (box) box.textContent = items.length.toLocaleString() + ' game' + (items.length === 1 ? '' : 's') + ' found';
+            if (box) box.textContent = I18N('games.found', '{n} game(s) found').replace('{n}', items.length.toLocaleString());
             const slice = items.slice(0, shown);
             if (!slice.length) {
               // 空状态设计（#11）：引导清空筛选，避免死胡同
@@ -1856,7 +1880,7 @@
             if (moreBtn) {
               const hasMore = items.length > shown;
               moreBtn.style.display = hasMore ? 'block' : 'none';
-              moreBtn.textContent = 'Load more (' + Math.min(120, items.length - shown).toLocaleString() + ' more)';
+              moreBtn.textContent = I18N('games.loadMore', 'Load more ({n} more)').replace('{n}', Math.min(120, items.length - shown).toLocaleString());
             }
           };
           // 无限滚动（只建一次）：接近底部自动加载更多
@@ -1866,7 +1890,7 @@
           gameList.after(sentinel);
           const loader = document.createElement('div');
           loader.className = 'scroll-loader';
-          loader.textContent = 'Loading more...';
+          loader.textContent = I18N('games.loadingMore', 'Loading more...');
           loader.style.display = 'none';
           sentinel.after(loader);
           let loading = false;
