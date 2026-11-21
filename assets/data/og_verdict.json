@@ -1,0 +1,1752 @@
+{
+ "730": {
+  "slug": "counter-strike-2",
+  "name": "Counter-Strike 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-730.png"
+ },
+ "570": {
+  "slug": "dota-2",
+  "name": "Dota 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-570.png"
+ },
+ "578080": {
+  "slug": "pubg-battlegrounds",
+  "name": "PUBG: BATTLEGROUNDS",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-578080.png"
+ },
+ "3419430": {
+  "slug": "bongo-cat",
+  "name": "Bongo Cat",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3419430.png"
+ },
+ "1938090": {
+  "slug": "call-of-duty",
+  "name": "Call of Duty®",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1938090.png"
+ },
+ "252490": {
+  "slug": "rust",
+  "name": "Rust",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-252490.png"
+ },
+ "1091500": {
+  "slug": "cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1091500.png"
+ },
+ "4115450": {
+  "slug": "phantom-blade-zero",
+  "name": "Phantom Blade Zero",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4115450.png"
+ },
+ "440": {
+  "slug": "team-fortress-2",
+  "name": "Team Fortress 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-440.png"
+ },
+ "1867240": {
+  "slug": "wardogs",
+  "name": "WARDOGS",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1867240.png"
+ },
+ "1172470": {
+  "slug": "apex-legends",
+  "name": "Apex Legends™",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1172470.png"
+ },
+ "1808500": {
+  "slug": "arc-raiders",
+  "name": "ARC Raiders",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1808500.png"
+ },
+ "892970": {
+  "slug": "valheim",
+  "name": "Valheim",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-892970.png"
+ },
+ "359550": {
+  "slug": "tom-clancys-rainbow-six-siege",
+  "name": "Tom Clancy's Rainbow Six Siege",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-359550.png"
+ },
+ "230410": {
+  "slug": "warframe",
+  "name": "Warframe",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-230410.png"
+ },
+ "1203620": {
+  "slug": "enshrouded",
+  "name": "Enshrouded",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1203620.png"
+ },
+ "322170": {
+  "slug": "geometry-dash",
+  "name": "Geometry Dash",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-322170.png"
+ },
+ "3678970": {
+  "slug": "tbh-task-bar-hero",
+  "name": "TBH: Task Bar Hero",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3678970.png"
+ },
+ "381210": {
+  "slug": "dead-by-daylight",
+  "name": "Dead by Daylight",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-381210.png"
+ },
+ "3241660": {
+  "slug": "r-e-p-o",
+  "name": "R.E.P.O.",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3241660.png"
+ },
+ "2357570": {
+  "slug": "overwatch",
+  "name": "Overwatch®",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2357570.png"
+ },
+ "221100": {
+  "slug": "dayz",
+  "name": "DayZ",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-221100.png"
+ },
+ "1623730": {
+  "slug": "palworld",
+  "name": "Palworld",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1623730.png"
+ },
+ "3932890": {
+  "slug": "escape-from-tarkov",
+  "name": "Escape from Tarkov",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3932890.png"
+ },
+ "1478500": {
+  "slug": "big-walk",
+  "name": "Big Walk",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1478500.png"
+ },
+ "2552430": {
+  "slug": "kingdom-hearts-hd-1-5-2-5-remix",
+  "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2552430.png"
+ },
+ "3513350": {
+  "slug": "wuthering-waves",
+  "name": "Wuthering Waves",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3513350.png"
+ },
+ "4162040": {
+  "slug": "zenless-zone-zero",
+  "name": "Zenless Zone Zero",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4162040.png"
+ },
+ "4704690": {
+  "slug": "meccha-chameleon",
+  "name": "MECCHA CHAMELEON",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4704690.png"
+ },
+ "3787240": {
+  "slug": "marvel-t-kon-fighting-souls",
+  "name": "MARVEL Tōkon: Fighting Souls",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3787240.png"
+ },
+ "1364780": {
+  "slug": "street-fighter-6",
+  "name": "Street Fighter™ 6",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1364780.png"
+ },
+ "1665460": {
+  "slug": "efootball",
+  "name": "eFootball™",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1665460.png"
+ },
+ "2483190": {
+  "slug": "forza-horizon-6",
+  "name": "Forza Horizon 6",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2483190.png"
+ },
+ "438100": {
+  "slug": "vrchat",
+  "name": "VRChat",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-438100.png"
+ },
+ "3282300": {
+  "slug": "mistfall-hunter",
+  "name": "Mistfall Hunter",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3282300.png"
+ },
+ "1449850": {
+  "slug": "yu-gi-oh-master-duel",
+  "name": "Yu-Gi-Oh! Master Duel",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1449850.png"
+ },
+ "2161700": {
+  "slug": "persona-3-reload",
+  "name": "Persona 3 Reload",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2161700.png"
+ },
+ "2767030": {
+  "slug": "marvel-rivals",
+  "name": "Marvel Rivals",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2767030.png"
+ },
+ "881020": {
+  "slug": "granblue-fantasy-relink",
+  "name": "Granblue Fantasy: Relink",
+  "pct": 12,
+  "mg": 8781,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-881020.png"
+ },
+ "4108000": {
+  "slug": "machine-party",
+  "name": "Machine Party",
+  "pct": 5,
+  "mg": 16446,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4108000.png"
+ },
+ "3934250": {
+  "slug": "village-in-the-shade",
+  "name": "Village in the Shade",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3934250.png"
+ },
+ "4025700": {
+  "slug": "heartopia",
+  "name": "Heartopia",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4025700.png"
+ },
+ "553850": {
+  "slug": "helldivers-2",
+  "name": "HELLDIVERS™ 2",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-553850.png"
+ },
+ "3092660": {
+  "slug": "reverse-1999",
+  "name": "Reverse: 1999",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3092660.png"
+ },
+ "2429640": {
+  "slug": "throne-and-liberty",
+  "name": "Throne and Liberty",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2429640.png"
+ },
+ "4570720": {
+  "slug": "dragonsword-awakening",
+  "name": "DragonSword : Awakening",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4570720.png"
+ },
+ "2139460": {
+  "slug": "once-human",
+  "name": "Once Human",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2139460.png"
+ },
+ "2651280": {
+  "slug": "marvels-spider-man-2",
+  "name": "Marvel's Spider-Man 2",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2651280.png"
+ },
+ "2868840": {
+  "slug": "slay-the-spire-2",
+  "name": "Slay the Spire 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2868840.png"
+ },
+ "3061570": {
+  "slug": "persona5-the-phantom-x",
+  "name": "Persona5: The Phantom X",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3061570.png"
+ },
+ "4508340": {
+  "slug": "nte-neverness-to-everness",
+  "name": "NTE: Neverness to Everness",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4508340.png"
+ },
+ "2246340": {
+  "slug": "monster-hunter-wilds",
+  "name": "Monster Hunter Wilds",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2246340.png"
+ },
+ "2694490": {
+  "slug": "path-of-exile-2",
+  "name": "Path of Exile 2",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2694490.png"
+ },
+ "2399830": {
+  "slug": "ark-survival-ascended",
+  "name": "ARK: Survival Ascended",
+  "pct": 5,
+  "mg": 16553,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2399830.png"
+ },
+ "3240220": {
+  "slug": "grand-theft-auto-v-enhanced",
+  "name": "Grand Theft Auto V Enhanced",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3240220.png"
+ },
+ "4282500": {
+  "slug": "hololive-dreams",
+  "name": "hololive Dreams",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4282500.png"
+ },
+ "2622380": {
+  "slug": "elden-ring-nightreign",
+  "name": "ELDEN RING NIGHTREIGN",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2622380.png"
+ },
+ "1245620": {
+  "slug": "elden-ring",
+  "name": "ELDEN RING",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1245620.png"
+ },
+ "2764370": {
+  "slug": "starward",
+  "name": "Starward",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2764370.png"
+ },
+ "1049590": {
+  "slug": "eternal-return-1049590",
+  "name": "Eternal Return",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1049590.png"
+ },
+ "2358720": {
+  "slug": "black-myth-wukong",
+  "name": "Black Myth: Wukong",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2358720.png"
+ },
+ "1687950": {
+  "slug": "persona-5-royal",
+  "name": "Persona 5 Royal",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1687950.png"
+ },
+ "2679460": {
+  "slug": "metaphor-refantazio",
+  "name": "Metaphor: ReFantazio",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2679460.png"
+ },
+ "39210": {
+  "slug": "final-fantasy-xiv-online",
+  "name": "FINAL FANTASY XIV Online",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-39210.png"
+ },
+ "3527290": {
+  "slug": "peak",
+  "name": "PEAK",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3527290.png"
+ },
+ "3812600": {
+  "slug": "restory-chill-electronics-repairs",
+  "name": "ReStory: Chill Electronics Repairs",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3812600.png"
+ },
+ "2073620": {
+  "slug": "arena-breakout-infinite",
+  "name": "Arena Breakout: Infinite",
+  "pct": 5,
+  "mg": 16553,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2073620.png"
+ },
+ "2507950": {
+  "slug": "delta-force",
+  "name": "Delta Force",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2507950.png"
+ },
+ "2426960": {
+  "slug": "summoners-war",
+  "name": "Summoners War",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2426960.png"
+ },
+ "1368140": {
+  "slug": "corsair-cove",
+  "name": "Corsair Cove",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1368140.png"
+ },
+ "1973530": {
+  "slug": "limbus-company",
+  "name": "Limbus Company",
+  "pct": 30,
+  "mg": 2394,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1973530.png"
+ },
+ "2950790": {
+  "slug": "iron-nest-heavy-turret-simulator",
+  "name": "IRON NEST: Heavy Turret Simulator",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2950790.png"
+ },
+ "251570": {
+  "slug": "7-days-to-die",
+  "name": "7 Days to Die",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-251570.png"
+ },
+ "3751950": {
+  "slug": "assassins-creed-black-flag-resynced",
+  "name": "Assassin's Creed Black Flag Resynced",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3751950.png"
+ },
+ "2001760": {
+  "slug": "beast-of-reincarnation",
+  "name": "Beast of Reincarnation",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2001760.png"
+ },
+ "294100": {
+  "slug": "rimworld",
+  "name": "RimWorld",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-294100.png"
+ },
+ "1962700": {
+  "slug": "subnautica-2",
+  "name": "Subnautica 2",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1962700.png"
+ },
+ "2141910": {
+  "slug": "magic-the-gathering-arena",
+  "name": "Magic: The Gathering Arena",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2141910.png"
+ },
+ "1158310": {
+  "slug": "crusader-kings-iii",
+  "name": "Crusader Kings III",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1158310.png"
+ },
+ "2807960": {
+  "slug": "battlefield-6",
+  "name": "Battlefield™ 6",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2807960.png"
+ },
+ "2379740": {
+  "slug": "wizardry-variants-daphne",
+  "name": "Wizardry Variants Daphne",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2379740.png"
+ },
+ "3472040": {
+  "slug": "nba-2k26",
+  "name": "NBA 2K26",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3472040.png"
+ },
+ "3564740": {
+  "slug": "where-winds-meet",
+  "name": "Where Winds Meet",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3564740.png"
+ },
+ "1909950": {
+  "slug": "super-robot-wars-y",
+  "name": "SUPER ROBOT WARS Y",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1909950.png"
+ },
+ "1817070": {
+  "slug": "marvels-spider-man-remastered",
+  "name": "Marvel’s Spider-Man Remastered",
+  "pct": 13,
+  "mg": 7907,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1817070.png"
+ },
+ "582660": {
+  "slug": "black-desert",
+  "name": "Black Desert",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-582660.png"
+ },
+ "2231380": {
+  "slug": "tom-clancys-ghost-recon-breakpoint",
+  "name": "Tom Clancy's Ghost Recon® Breakpoint",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2231380.png"
+ },
+ "1875830": {
+  "slug": "shin-megami-tensei-v-vengeance",
+  "name": "Shin Megami Tensei V: Vengeance",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1875830.png"
+ },
+ "3722330": {
+  "slug": "shift-at-midnight",
+  "name": "Shift At Midnight",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3722330.png"
+ },
+ "4128400": {
+  "slug": "ebaseball-pro-spirit",
+  "name": "eBaseball™: PRO SPIRIT",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4128400.png"
+ },
+ "2436940": {
+  "slug": "sephiria",
+  "name": "Sephiria",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2436940.png"
+ },
+ "3764200": {
+  "slug": "resident-evil-requiem",
+  "name": "Resident Evil Requiem",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3764200.png"
+ },
+ "949230": {
+  "slug": "cities-skylines-ii",
+  "name": "Cities: Skylines II",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-949230.png"
+ },
+ "4584110": {
+  "slug": "soul-land-awakening-world",
+  "name": "Soul Land: Awakening World",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4584110.png"
+ },
+ "2291060": {
+  "slug": "earth-defense-force-6",
+  "name": "EARTH DEFENSE FORCE 6",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2291060.png"
+ },
+ "394360": {
+  "slug": "hearts-of-iron-iv",
+  "name": "Hearts of Iron IV",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-394360.png"
+ },
+ "2142790": {
+  "slug": "fields-of-mistria",
+  "name": "Fields of Mistria",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2142790.png"
+ },
+ "3405690": {
+  "slug": "ea-sports-fc-26",
+  "name": "EA SPORTS FC™ 26",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3405690.png"
+ },
+ "460930": {
+  "slug": "tom-clancys-ghost-recon-wildlands",
+  "name": "Tom Clancy's Ghost Recon® Wildlands",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-460930.png"
+ },
+ "552990": {
+  "slug": "world-of-warships",
+  "name": "World of Warships",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-552990.png"
+ },
+ "3679080": {
+  "slug": "the-seven-deadly-sins-origin",
+  "name": "The Seven Deadly Sins: Origin",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3679080.png"
+ },
+ "1607250": {
+  "slug": "my-hero-ultra-rumble",
+  "name": "MY HERO ULTRA RUMBLE",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1607250.png"
+ },
+ "3101040": {
+  "slug": "magical-girl-witch-trials",
+  "name": "Magical Girl Witch Trials",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3101040.png"
+ },
+ "3892270": {
+  "slug": "gamble-with-your-friends",
+  "name": "Gamble With Your Friends",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3892270.png"
+ },
+ "1790600": {
+  "slug": "dragon-ball-sparking-zero",
+  "name": "DRAGON BALL: Sparking! ZERO",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1790600.png"
+ },
+ "3079210": {
+  "slug": "hell-let-loose-vietnam",
+  "name": "Hell Let Loose: Vietnam",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3079210.png"
+ },
+ "2285550": {
+  "slug": "doloc-town",
+  "name": "Doloc Town",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2285550.png"
+ },
+ "1671210": {
+  "slug": "deltarune",
+  "name": "DELTARUNE",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1671210.png"
+ },
+ "1974050": {
+  "slug": "torchlight-infinite",
+  "name": "Torchlight: Infinite",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1974050.png"
+ },
+ "108600": {
+  "slug": "project-zomboid",
+  "name": "Project Zomboid",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-108600.png"
+ },
+ "4611990": {
+  "slug": "3-japan-stigmatized-property",
+  "name": "日本事故物件監視協会3 -Japan Stigmatized Property-",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4611990.png"
+ },
+ "2288630": {
+  "slug": "taiko-no-tatsujin-rhythm-festival",
+  "name": "Taiko no Tatsujin: Rhythm Festival",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2288630.png"
+ },
+ "1943950": {
+  "slug": "escape-the-backrooms",
+  "name": "Escape the Backrooms",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1943950.png"
+ },
+ "2622000": {
+  "slug": "astral-party",
+  "name": "Astral Party ",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2622000.png"
+ },
+ "3321460": {
+  "slug": "crimson-desert-enhanced",
+  "name": "Crimson Desert",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3321460.png"
+ },
+ "2111630": {
+  "slug": "jr-east-train-simulator",
+  "name": "JR EAST Train Simulator",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2111630.png"
+ },
+ "1295660": {
+  "slug": "sid-meiers-civilization-vii",
+  "name": "Sid Meier's Civilization VII",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1295660.png"
+ },
+ "413150": {
+  "slug": "stardew-valley",
+  "name": "Stardew Valley",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-413150.png"
+ },
+ "427520": {
+  "slug": "factorio",
+  "name": "Factorio",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-427520.png"
+ },
+ "699130": {
+  "slug": "world-war-z",
+  "name": "World War Z",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-699130.png"
+ },
+ "2764460": {
+  "slug": "sandustry",
+  "name": "Sandustry",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2764460.png"
+ },
+ "1282270": {
+  "slug": "strinova",
+  "name": "Strinova",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1282270.png"
+ },
+ "3489700": {
+  "slug": "stellar-blade",
+  "name": "Stellar Blade™",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3489700.png"
+ },
+ "2221490": {
+  "slug": "tom-clancys-the-division-2",
+  "name": "Tom Clancy’s The Division® 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2221490.png"
+ },
+ "1222140": {
+  "slug": "detroit-become-human",
+  "name": "Detroit: Become Human",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1222140.png"
+ },
+ "2288340": {
+  "slug": "ace-combat-8-wings-of-theve",
+  "name": "ACE COMBAT 8: WINGS OF THEVE",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2288340.png"
+ },
+ "1313140": {
+  "slug": "cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1313140.png"
+ },
+ "739630": {
+  "slug": "phasmophobia",
+  "name": "Phasmophobia",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-739630.png"
+ },
+ "227300": {
+  "slug": "euro-truck-simulator-2",
+  "name": "Euro Truck Simulator 2",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-227300.png"
+ },
+ "648800": {
+  "slug": "raft",
+  "name": "Raft",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-648800.png"
+ },
+ "728880": {
+  "slug": "overcooked-2",
+  "name": "Overcooked! 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-728880.png"
+ },
+ "3357650": {
+  "slug": "pragmata",
+  "name": "PRAGMATA",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3357650.png"
+ },
+ "255710": {
+  "slug": "cities-skylines",
+  "name": "Cities: Skylines",
+  "pct": 43,
+  "mg": 1353,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-255710.png"
+ },
+ "1142710": {
+  "slug": "total-war-warhammer-iii",
+  "name": "Total War: WARHAMMER III",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1142710.png"
+ },
+ "1086940": {
+  "slug": "baldurs-gate-3",
+  "name": "Baldur's Gate 3",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1086940.png"
+ },
+ "1903340": {
+  "slug": "clair-obscur-expedition-33",
+  "name": "Clair Obscur: Expedition 33",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1903340.png"
+ },
+ "2244210": {
+  "slug": "echoes-of-aincrad",
+  "name": "Echoes of Aincrad",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2244210.png"
+ },
+ "1374490": {
+  "slug": "runescape-dragonwilds",
+  "name": "RuneScape: Dragonwilds",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1374490.png"
+ },
+ "238960": {
+  "slug": "path-of-exile",
+  "name": "Path of Exile",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-238960.png"
+ },
+ "2958130": {
+  "slug": "jurassic-world-evolution-3",
+  "name": "Jurassic World Evolution 3",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2958130.png"
+ },
+ "814380": {
+  "slug": "sekiro-shadows-die-twice-goty-edition",
+  "name": "Sekiro™: Shadows Die Twice - GOTY Edition",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-814380.png"
+ },
+ "3041230": {
+  "slug": "windrose",
+  "name": "Windrose",
+  "pct": 5,
+  "mg": 16446,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3041230.png"
+ },
+ "526870": {
+  "slug": "satisfactory",
+  "name": "Satisfactory",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-526870.png"
+ },
+ "4450620": {
+  "slug": "grain-rot",
+  "name": "GRAIN ROT",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4450620.png"
+ },
+ "2968420": {
+  "slug": "powerwash-simulator-2",
+  "name": "PowerWash Simulator 2",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2968420.png"
+ },
+ "1984270": {
+  "slug": "digimon-story-time-stranger",
+  "name": "Digimon Story Time Stranger",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1984270.png"
+ },
+ "518790": {
+  "slug": "thehunter-call-of-the-wild",
+  "name": "theHunter: Call of the Wild™",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-518790.png"
+ },
+ "1973710": {
+  "slug": "1973710",
+  "name": "ヘブンバーンズレッド",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1973710.png"
+ },
+ "2537590": {
+  "slug": "microsoft-flight-simulator-2024",
+  "name": "Microsoft Flight Simulator 2024",
+  "pct": 5,
+  "mg": 16553,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2537590.png"
+ },
+ "1384160": {
+  "slug": "guilty-gear-strive",
+  "name": "GUILTY GEAR -STRIVE-",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1384160.png"
+ },
+ "4212480": {
+  "slug": "ragnarok-the-new-world",
+  "name": "Ragnarok: The New World",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4212480.png"
+ },
+ "2129530": {
+  "slug": "reanimal",
+  "name": "REANIMAL",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2129530.png"
+ },
+ "306130": {
+  "slug": "the-elder-scrolls-online",
+  "name": "The Elder Scrolls® Online",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-306130.png"
+ },
+ "3375780": {
+  "slug": "trails-in-the-sky-1st-chapter",
+  "name": "Trails in the Sky 1st Chapter",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3375780.png"
+ },
+ "582010": {
+  "slug": "monster-hunter-world",
+  "name": "Monster Hunter: World",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-582010.png"
+ },
+ "2344520": {
+  "slug": "diablo-iv",
+  "name": "Diablo® IV",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2344520.png"
+ },
+ "2052410": {
+  "slug": "witch-on-the-holy-night",
+  "name": "WITCH ON THE HOLY NIGHT",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2052410.png"
+ },
+ "105600": {
+  "slug": "terraria",
+  "name": "Terraria",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-105600.png"
+ },
+ "2806050": {
+  "slug": "halo-campaign-evolved",
+  "name": "Halo: Campaign Evolved",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2806050.png"
+ },
+ "3768760": {
+  "slug": "007-first-light",
+  "name": "007 First Light",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3768760.png"
+ },
+ "1203220": {
+  "slug": "naraka-bladepoint",
+  "name": "NARAKA: BLADEPOINT",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1203220.png"
+ },
+ "2499860": {
+  "slug": "dragon-quest-vii-reimagined",
+  "name": "DRAGON QUEST VII Reimagined",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2499860.png"
+ },
+ "2584990": {
+  "slug": "shadowverse-worlds-beyond",
+  "name": "Shadowverse: Worlds Beyond",
+  "pct": 5,
+  "mg": 16446,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2584990.png"
+ },
+ "219990": {
+  "slug": "grim-dawn",
+  "name": "Grim Dawn",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-219990.png"
+ },
+ "2001120": {
+  "slug": "split-fiction",
+  "name": "Split Fiction",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2001120.png"
+ },
+ "2050650": {
+  "slug": "resident-evil-4",
+  "name": "Resident Evil 4",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2050650.png"
+ },
+ "1144200": {
+  "slug": "ready-or-not",
+  "name": "Ready or Not",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1144200.png"
+ },
+ "1172620": {
+  "slug": "sea-of-thieves-2026-edition",
+  "name": "Sea of Thieves: 2026 Edition",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1172620.png"
+ },
+ "489830": {
+  "slug": "the-elder-scrolls-v-skyrim-special-edition",
+  "name": "The Elder Scrolls V: Skyrim Special Edition",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-489830.png"
+ },
+ "1151340": {
+  "slug": "fallout-76",
+  "name": "Fallout 76",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1151340.png"
+ },
+ "2054970": {
+  "slug": "dragons-dogma-2",
+  "name": "Dragon's Dogma 2",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2054970.png"
+ },
+ "3595270": {
+  "slug": "call-of-duty-modern-warfare-iii",
+  "name": "Call of Duty®: Modern Warfare® III",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3595270.png"
+ },
+ "261550": {
+  "slug": "mount-blade-ii-bannerlord",
+  "name": "Mount & Blade II: Bannerlord",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-261550.png"
+ },
+ "1367080": {
+  "slug": "mobile-suit-gundam-battle-operation-2",
+  "name": "MOBILE SUIT GUNDAM BATTLE OPERATION 2",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1367080.png"
+ },
+ "1859910": {
+  "slug": "legend-of-mortal",
+  "name": "Legend of Mortal",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1859910.png"
+ },
+ "3681010": {
+  "slug": "nioh-3",
+  "name": "Nioh 3",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3681010.png"
+ },
+ "2552450": {
+  "slug": "kingdom-hearts-iii-re-mind-dlc",
+  "name": "KINGDOM HEARTS III + Re Mind (DLC)",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2552450.png"
+ },
+ "289070": {
+  "slug": "sid-meiers-civilization-vi",
+  "name": "Sid Meier’s Civilization® VI",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-289070.png"
+ },
+ "281990": {
+  "slug": "stellaris",
+  "name": "Stellaris",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-281990.png"
+ },
+ "2325290": {
+  "slug": "sky-children-of-the-light",
+  "name": "Sky: Children of the Light",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2325290.png"
+ },
+ "2661300": {
+  "slug": "grounded-2",
+  "name": "Grounded 2",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2661300.png"
+ },
+ "2893570": {
+  "slug": "dragon-quest-i-ii-hd-2d-remake",
+  "name": "DRAGON QUEST I & II HD-2D Remake",
+  "pct": 23,
+  "mg": 3900,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2893570.png"
+ },
+ "3280350": {
+  "slug": "death-stranding-2-on-the-beach",
+  "name": "DEATH STRANDING 2: ON THE BEACH",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3280350.png"
+ },
+ "4435490": {
+  "slug": "call-of-duty-modern-warfare-4",
+  "name": "Call of Duty®: Modern Warfare® 4",
+  "pct": 11,
+  "mg": 9636,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4435490.png"
+ },
+ "1222670": {
+  "slug": "the-sims-4",
+  "name": "The Sims™ 4",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1222670.png"
+ },
+ "2074920": {
+  "slug": "the-first-descendant",
+  "name": "The First Descendant",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2074920.png"
+ },
+ "4421010": {
+  "slug": "bills-must-be-paid",
+  "name": "Bills Must Be Paid",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4421010.png"
+ },
+ "1407200": {
+  "slug": "world-of-tanks",
+  "name": "World of Tanks",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1407200.png"
+ },
+ "292000": {
+  "slug": "no-more-room-in-hell-2",
+  "name": "No More Room in Hell 2",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-292000.png"
+ },
+ "1085660": {
+  "slug": "destiny-2",
+  "name": "Destiny 2",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1085660.png"
+ },
+ "2185060": {
+  "slug": "two-point-museum",
+  "name": "Two Point Museum",
+  "pct": 30,
+  "mg": 2394,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2185060.png"
+ },
+ "3937550": {
+  "slug": "yakuza-kiwami-3-dark-ties",
+  "name": "Yakuza Kiwami 3 & Dark Ties",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3937550.png"
+ },
+ "2190220": {
+  "slug": "touhou-danmaku-kagura-phantasia-lost",
+  "name": "Touhou Danmaku Kagura Phantasia Lost",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2190220.png"
+ },
+ "1621690": {
+  "slug": "core-keeper",
+  "name": "Core Keeper",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1621690.png"
+ },
+ "1716740": {
+  "slug": "starfield",
+  "name": "Starfield",
+  "pct": 5,
+  "mg": 16553,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1716740.png"
+ },
+ "3226060": {
+  "slug": "dreamecho",
+  "name": "DreamEcho",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3226060.png"
+ },
+ "2288350": {
+  "slug": "raidou-remastered-the-mystery-of-the-soulless-army",
+  "name": "RAIDOU Remastered: The Mystery of the Soulless Army",
+  "pct": 43,
+  "mg": 1353,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2288350.png"
+ },
+ "1778820": {
+  "slug": "tekken-8",
+  "name": "TEKKEN 8",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1778820.png"
+ },
+ "1426210": {
+  "slug": "it-takes-two",
+  "name": "It Takes Two Friend's Pass",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1426210.png"
+ },
+ "1868140": {
+  "slug": "dave-the-diver",
+  "name": "DAVE THE DIVER",
+  "pct": 43,
+  "mg": 1353,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1868140.png"
+ },
+ "3483510": {
+  "slug": "the-adventures-of-elliot-the-millennium-tales",
+  "name": "The Adventures of Elliot: The Millennium Tales",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3483510.png"
+ },
+ "2918150": {
+  "slug": "one-piece-bounty-rush",
+  "name": "ONE PIECE Bounty Rush",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2918150.png"
+ },
+ "4012810": {
+  "slug": "steins-gate-reboot",
+  "name": "STEINS;GATE RE:BOOT",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4012810.png"
+ },
+ "3609080": {
+  "slug": "starsavior",
+  "name": "StarSavior",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3609080.png"
+ },
+ "3017860": {
+  "slug": "doom-the-dark-ages",
+  "name": "DOOM: The Dark Ages",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3017860.png"
+ },
+ "3636770": {
+  "slug": "servant-of-the-lake",
+  "name": "Servant of the Lake",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3636770.png"
+ },
+ "4197610": {
+  "slug": "librarian-tidy-up-the-arcane-library",
+  "name": "Librarian: Tidy Up the Arcane Library!",
+  "pct": 5,
+  "mg": 16446,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4197610.png"
+ },
+ "1446780": {
+  "slug": "monster-hunter-rise",
+  "name": "MONSTER HUNTER RISE",
+  "pct": 30,
+  "mg": 2394,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1446780.png"
+ },
+ "2273430": {
+  "slug": "blazblue-entropy-effect",
+  "name": "BlazBlue Entropy Effect",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2273430.png"
+ },
+ "2827200": {
+  "slug": "mimesis",
+  "name": "MIMESIS",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2827200.png"
+ },
+ "1888160": {
+  "slug": "armored-core-vi-fires-of-rubicon",
+  "name": "ARMORED CORE™ VI FIRES OF RUBICON™",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1888160.png"
+ },
+ "4800590": {
+  "slug": "supermarket-chaos",
+  "name": "Supermarket Chaos",
+  "pct": 5,
+  "mg": 16446,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4800590.png"
+ },
+ "2058190": {
+  "slug": "lost-judgment",
+  "name": "Lost Judgment",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2058190.png"
+ },
+ "1627720": {
+  "slug": "lies-of-p",
+  "name": "Lies of P",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1627720.png"
+ },
+ "3293260": {
+  "slug": "waterpark-simulator",
+  "name": "Waterpark Simulator",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3293260.png"
+ },
+ "2215430": {
+  "slug": "ghost-of-tsushima-directors-cut",
+  "name": "Ghost of Tsushima DIRECTOR'S CUT",
+  "pct": 5,
+  "mg": 16553,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2215430.png"
+ },
+ "1174180": {
+  "slug": "red-dead-redemption-2",
+  "name": "Red Dead Redemption 2",
+  "pct": 16,
+  "mg": 5964,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1174180.png"
+ },
+ "2486820": {
+  "slug": "sonic-racing-crossworlds",
+  "name": "Sonic Racing: CrossWorlds",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2486820.png"
+ },
+ "2707930": {
+  "slug": "palia",
+  "name": "Palia",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2707930.png"
+ },
+ "376210": {
+  "slug": "the-isle",
+  "name": "The Isle",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-376210.png"
+ },
+ "2072450": {
+  "slug": "like-a-dragon-infinite-wealth",
+  "name": "Like a Dragon: Infinite Wealth",
+  "pct": 15,
+  "mg": 6327,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2072450.png"
+ },
+ "1462040": {
+  "slug": "final-fantasy-vii-remake-intergrade",
+  "name": "FINAL FANTASY VII REMAKE INTERGRADE",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1462040.png"
+ },
+ "3164500": {
+  "slug": "schedule-i",
+  "name": "Schedule I",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3164500.png"
+ },
+ "1067360": {
+  "slug": "pax-autocratica",
+  "name": "Pax Autocratica",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1067360.png"
+ },
+ "3562120": {
+  "slug": "magical-princess",
+  "name": "Magical Princess",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3562120.png"
+ },
+ "872410": {
+  "slug": "romance-of-the-three-kingdoms-xiv",
+  "name": "ROMANCE OF THE THREE KINGDOMS XIV",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-872410.png"
+ },
+ "1297900": {
+  "slug": "gothic-1-remake",
+  "name": "Gothic 1 Remake",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1297900.png"
+ },
+ "1336980": {
+  "slug": "nobunagas-ambition-awakening",
+  "name": "NOBUNAGA'S AMBITION: Awakening",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1336980.png"
+ },
+ "3859630": {
+  "slug": "metal-gear-solid-master-collection-vol-2",
+  "name": "METAL GEAR SOLID: MASTER COLLECTION Vol.2",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3859630.png"
+ },
+ "632360": {
+  "slug": "risk-of-rain-2",
+  "name": "Risk of Rain 2",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-632360.png"
+ },
+ "1659040": {
+  "slug": "hitman-world-of-assassination",
+  "name": "HITMAN World of Assassination",
+  "pct": 21,
+  "mg": 4415,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1659040.png"
+ },
+ "774171": {
+  "slug": "muse-dash",
+  "name": "Muse Dash",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-774171.png"
+ },
+ "2670630": {
+  "slug": "supermarket-simulator",
+  "name": "Supermarket Simulator",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2670630.png"
+ },
+ "2059170": {
+  "slug": "quasimorph",
+  "name": "Quasimorph",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2059170.png"
+ },
+ "377160": {
+  "slug": "fallout-4",
+  "name": "Fallout 4",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-377160.png"
+ },
+ "2638890": {
+  "slug": "onimusha-way-of-the-sword",
+  "name": "Onimusha: Way of the Sword",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2638890.png"
+ },
+ "2300320": {
+  "slug": "farming-simulator-25",
+  "name": "Farming Simulator 25",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2300320.png"
+ },
+ "2963800": {
+  "slug": "drainsim",
+  "name": "DrainSim",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2963800.png"
+ },
+ "1285190": {
+  "slug": "borderlands-4",
+  "name": "Borderlands 4",
+  "pct": 4,
+  "mg": 18124,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1285190.png"
+ },
+ "2186680": {
+  "slug": "warhammer-40-000-rogue-trader",
+  "name": "Warhammer 40,000: Rogue Trader",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2186680.png"
+ },
+ "2384580": {
+  "slug": "dynasty-warriors-origins",
+  "name": "DYNASTY WARRIORS: ORIGINS",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2384580.png"
+ },
+ "2852190": {
+  "slug": "monster-hunter-stories-3-twisted-reflection",
+  "name": "Monster Hunter Stories 3: Twisted Reflection",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2852190.png"
+ },
+ "3949040": {
+  "slug": "rv-there-yet",
+  "name": "RV There Yet?",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3949040.png"
+ },
+ "4380490": {
+  "slug": "cat-mail-co",
+  "name": "Cat Mail Co.",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4380490.png"
+ },
+ "3551340": {
+  "slug": "football-manager-26",
+  "name": "Football Manager 26",
+  "pct": 16,
+  "mg": 6148,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3551340.png"
+ },
+ "1282100": {
+  "slug": "remnant-ii",
+  "name": "REMNANT II®",
+  "pct": 8,
+  "mg": 12655,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1282100.png"
+ },
+ "1669000": {
+  "slug": "age-of-wonders-4",
+  "name": "Age of Wonders 4",
+  "pct": 41,
+  "mg": 1500,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-1669000.png"
+ },
+ "2479810": {
+  "slug": "gray-zone-warfare",
+  "name": "Gray Zone Warfare",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-2479810.png"
+ },
+ "3156770": {
+  "slug": "witchfire",
+  "name": "Witchfire",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-3156770.png"
+ },
+ "4449410": {
+  "slug": "kyoto-xanadu-the-blooming-phantom",
+  "name": "KYOTO XANADU -the Blooming Phantom-",
+  "pct": 10,
+  "mg": 10017,
+  "img": "https://t-bites.github.io/caniplay/assets/og/verdict-4449410.png"
+ }
+}
